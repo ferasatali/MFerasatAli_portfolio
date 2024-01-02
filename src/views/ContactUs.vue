@@ -1,0 +1,140 @@
+<template>
+  <v-container>
+    <v-row>
+      <v-col cols="6">
+        <v-row>
+          <v-col cols="12">
+            <div ref="contact" class="contact">
+              <p class="main-heading">Contact Us</p>
+            </div>
+            <div ref="contact1" class="contact1">
+              <p class="sub-heading px-2">
+                We would love to speak with you. Feel free to reach out using
+                the below details.
+              </p>
+            </div>
+          </v-col>
+          <v-col cols="6" class="mb-0 pb-0">
+            <div class="form-field">
+              <v-text-field v-model="firstName" class="form-field-input" variant="solo" placeholder="First Name" />
+            </div>
+          </v-col>
+          <v-col cols="6" class="mb-0 pb-0 ml-0 pl-0">
+            <div class="form-field">
+              <v-text-field v-model="lastName" class="form-field-input" variant="solo" placeholder="Last Name" />
+            </div>
+          </v-col>
+          <v-col cols="12" class="my-0 py-0">
+            <div class="form-field">
+              <v-text-field v-model="email" class="form-field-input" variant="solo" placeholder="Email" />
+            </div>
+          </v-col>
+          <v-col cols="12" class="my-0 py-0">
+            <div class="form-field">
+              <v-textarea v-model="message" rows="6" class="form-field-input" variant="solo" placeholder="Message" />
+            </div>
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="6">
+        <GMapMap :center="{ lat: 24.0, lng: 55.0 }" :zoom="7" map-type-id="roadmap" style="width: 100%; height: 500px">
+        </GMapMap>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import { AppStore } from "@/store/app";
+import gsap from "gsap";
+const store = AppStore();
+
+const contact = ref(null);
+const contact1 = ref(null);
+
+const firstName = ref("");
+const lastName = ref("");
+const email = ref("");
+const message = ref("");
+
+onMounted(() => {
+  store.setNavBar("ContactUs");
+  gsap.to(contact.value, {
+    opacity: 1,
+    display: "block",
+    x: 1,
+    y: 1,
+    delay: 0.5
+  });
+  gsap.to(contact1.value, {
+    duration: 1,
+    opacity: 1,
+    display: "block",
+    x: 1,
+  });
+});
+</script>
+<style scoped lang="scss">
+.main-heading {
+  font-size: 43px;
+  color: rgba(28, 176, 244, 0.619) !important;
+  font-weight: 600;
+}
+
+.sub-heading {
+  font-size: 14px;
+  font-weight: 300;
+  color: #54618b;
+}
+
+.form-field ::v-deep {
+  .form-field-label {
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: #3e457c;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .form-field-input {
+    .v-input__control {
+      .v-field.v-field--no-label.v-field--variant-solo.v-theme--dark.v-locale--is-ltr {
+        border-radius: 13px !important;
+        background: #090b35;
+      }
+
+      .v-text-field__slot {
+        padding: 0 8px !important;
+      }
+    }
+
+    .v-text-field__details {
+      .v-messages__message {
+        padding: 0 8px !important;
+      }
+    }
+  }
+
+  &-errors {
+    margin: 0.4rem 0;
+
+    &-error {
+      color: rgb(132, 3, 3);
+    }
+  }
+}
+
+.contact {
+  transform: translateX(700px) translateY(500px);
+  opacity: 0;
+  display: none;
+}
+
+.contact1 {
+  transform: translateX(-200px);
+  opacity: 0;
+  display: none;
+}
+</style>
