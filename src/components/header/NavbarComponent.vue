@@ -20,7 +20,7 @@
     </a>
   </div>
 </template>
-
+  
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useDisplay } from "vuetify";

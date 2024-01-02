@@ -14,63 +14,39 @@
         style="gap: 2rem"
       >
         <div
-          class="base-card d-flex align-center flex-column animation-div"
+          class="d-flex base-card flex-column animation-div"
           ref="experties1"
         >
-          <img src="@/assets/images/museum.png" class="mt-4" />
-          <p class="mt-4">Government & Private Entities</p>
-          <p class="paragraph">
-            Revolutionize the way you manage your human capital with our
-            comprehensive HCMS solutions. Our software and technology solutions
-            are designed to meet the unique needs of both public and private
-            sector organizations. From recruitment and onboarding to time and
-            attendance tracking, our solutions help streamline HR processes and
-            support better decision making through data analysis.
+          <!-- <v-divider thickness="2" color="blue"/> -->
+          <p class="header-simple">Personal Projects</p>
+          <p class="main-heading1 mt-3">
+            - NRTS ( Final Year Project )
+            <span class="sub-heading1 ml-2 d-flex justify-end">
+              ( 08/2022 - 17-2023)
+            </span>
           </p>
-          <v-btn variant="text" elevation="0" class="mt-3 learnmore">
-            Learn More
-          </v-btn>
-        </div>
-        <div
-          class="base-card d-flex align-center flex-column animation-div"
-          ref="experties2"
-        >
-          <img src="@/assets/images/school.png" class="mt-4" />
-          <p class="mt-4">Educational Institute</p>
-          <p class="paragraph">
-            At the forefront of technological advancement, we bring the power of
-            AI to the education sector. Our goal is to enhance the quality of
-            education and student development by leveraging the latest AI
-            technologies. By conducting in-depth analysis of student skills, we
-            tailor teaching methods to address areas of improvement and create a
-            dynamic, adaptive learning environment.
+          <p class="paragraph mt-3">
+            <ul>
+              <li>
+                Work on Backend and Frontend of the project.
+              </li>
+              <li>
+                Work on Backend and Frontend of the project.
+              </li>
+              <li>
+                Work on Backend and Frontend of the project.
+              </li>
+            </ul>
+
           </p>
-          <v-btn variant="text" elevation="0" class="mt-3 learnmore">
-            Learn More
-          </v-btn>
-        </div>
-        <div
-          class="base-card d-flex align-center flex-column animation-last"
-          ref="experties3"
-        >
-          <img src="@/assets/images/searching.png" class="mt-4" />
-          <p class="mt-4">Talents</p>
-          <p class="paragraph">
-            Winning the race for top talent is essential in today’s crowded job
-            market. With competition for funding being fierce, acquiring top
-            talent should also be a top priority for founding teams worldwide. A
-            well-thought-out and data-driven approach to talent acquisition is
-            the key to unlocking your company’s potential for success, Outpace
-            the competition in the race for top talent and cut the time by 60%.
-          </p>
-          <v-btn variant="text" elevation="0" class="mt-3 learnmore">
-            Learn More
-          </v-btn>
         </div>
       </v-col>
     </v-row>
   </section>
 </template>
+<!-- <v-btn variant="text" elevation="0" class="mt-3 learnmore text-capitalize">
+            the95Star
+          </v-btn> -->
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
@@ -121,15 +97,11 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .base-card {
-  width: 310px;
+  width: 70%;
   padding: 1.75rem 1.5rem !important;
   background: #0a0b21 !important;
   box-shadow: 0 6px 32px rgba(44, 50, 169, 0.04) !important;
   border-radius: 20px !important;
-
-  @media (max-width: 400px) {
-    width: 265px;
-  }
 }
 
 .main-heading {
@@ -139,14 +111,12 @@ onMounted(() => {
 }
 
 .paragraph {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  color: #54618b;
+  color: #f8f8f8;
   display: flex;
-  margin-top: 9px;
-  flex-direction: column;
+  margin-left: 1rem;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 

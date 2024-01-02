@@ -70,6 +70,10 @@ onMounted(() => {
 @import "../../node_modules/vuetify/lib/styles/settings/_variables.scss";
 
 .home {
+  @media (min-width: 1800px) {
+    margin-top: 3rem;
+  }
+
   &-tagline {
     gap: 0.5rem;
     border-radius: 5rem;

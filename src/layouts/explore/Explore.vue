@@ -3,36 +3,25 @@
     <div ref="animation" class="animation">
       <div class="mt-4">
         <v-tabs v-model="tab" color="deep-white-accent-4" align-tabs="center" @update:model-value="setTab">
-          <v-tab :value="1">Serving The Best
+          <v-tab :value="1">Education
             <img src="@/assets/icons/linear/augur-(rep).svg" class="pl-7" />
           </v-tab>
 
-          <v-tab :value="2">Experties Areas
+          <v-tab :value="2">Experience
             <img src="@/assets/icons/linear/dent-(dent).svg" class="pl-7" />
           </v-tab>
 
-          <v-tab :value="3">AI Integration
+          <v-tab :value="3"> Skills & Interests
             <img src="@/assets/icons/linear/civic-(cvc).svg" class="pl-7" />
           </v-tab>
-          <v-tab :value="4">Our Services
+          <v-tab :value="4">Contact Me
             <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab>
-          <v-tab :value="5">Awards
-            <img src="@/assets/icons/linear/nebulas-(nas).svg" class="pl-7" /></v-tab>
         </v-tabs>
       </div>
       <router-view />
     </div>
     <div class="mt-auto">
       <v-row align="center" class="px-10 mb-6 align-center justify-space-between">
-        <v-col cols="12" class="d-flex align-center justify-space-between flex-wrap mb-0 pb-0">
-          <div class="d-flex align-start" style="gap: 1rem">
-            <img class="social-icons" src="@/assets/images/facebook-01.png" />
-            <img class="social-icons" src="@/assets/images/instagram.png" />
-            <img class="social-icons" src="@/assets/images/linkedin-02.png" />
-            <img class="social-icons" src="@/assets/images/twitter.png" />
-          </div>
-          <img src="@/assets/icons/bold/happyemoji.svg" />
-        </v-col>
         <v-col cols="12" class="d-flex align-center justify-center mt-0 pt-0">
           <v-btn variant="text" class="btn-explore" @click="close" prepend-icon="mdi-close">
             Close

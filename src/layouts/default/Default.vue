@@ -5,7 +5,7 @@
       <DefaultView />
     </div>
     <div class="mt-auto d-flex align-center justify-center pt-7">
-      <v-btn variant="text" class="btn-explore" to="/explore">
+      <v-btn variant="text" class="btn-explore" to="/discover">
         Discover
         <template v-slot:prepend>
           <img src="@/assets/icons/linear/menu.svg" />

@@ -13,35 +13,47 @@
         class="d-flex align-center justify-center mt-7 flex-wrap"
         style="gap: 1rem"
       >
-        <div
-          class="base-card d-flex align-center justify-center card"
-          ref="serving1"
-        >
-          <img src="@/assets/images/cropped-coloerd 1.svg" />
+        <div class="base-card card" ref="serving1">
+          <div class="d-flex flex-column" style="gap: 0.6rem">
+            <p class="header-simple">
+              Matric <span class="main-sub-heading text"> - Science </span>
+            </p>
+            <p class="main-sub-heading">Laural Bank Public School (LPS)</p>
+            <div class="d-flex justify-end">
+              <p class="sub-heading text-whitew">01/2010 - 03/2018</p>
+            </div>
+          </div>
         </div>
-        <div
-          class="base-card d-flex align-center justify-center card-left"
-          ref="serving2"
-        >
-          <img src="@/assets/images/SSA Logo 1.png" />
+        <div class="base-card card" ref="serving2">
+          <div class="d-flex flex-column" style="gap: 0.6rem">
+            <p class="header-simple">
+              Intermediate
+              <span class="main-sub-heading text"> - Science </span>
+            </p>
+            <p class="main-sub-heading">Punjab Group of Colleges (PGC)</p>
+            <div class="d-flex justify-end">
+              <p class="sub-heading text-whitew">01/2018 - 03/2019</p>
+            </div>
+          </div>
         </div>
       </v-col>
       <v-col
         cols="12"
-        class="d-flex align-center justify-center flex-wrap"
+        class="d-flex align-center justify-center mt-1 flex-wrap"
         style="gap: 1rem"
       >
-        <div
-          class="base-card d-flex align-center justify-center card"
-          ref="serving3"
-        >
-          <img src="@/assets/images/udacity-ar21 1.png" />
-        </div>
-        <div
-          class="base-card d-flex align-center justify-center card-left"
-          ref="serving4"
-        >
-          <img src="@/assets/images/Khalifa_University_New_Logo 1.png" />
+        <div class="base-card base-card-last-card card-left" ref="serving3">
+          <div class="d-flex flex-column" style="gap: 0.6rem">
+            <p class="header-simple">
+              Bachelors
+              <span class="main-sub-heading text"> - Computer Science </span>
+            </p>
+            <p class="main-sub-heading">Univeristy of Central Punjab (UCP)</p>
+            <div class="d-flex justify-end">
+              <p class="sub-heading text-whitew">08/2019 - 08/2023</p>
+            </div>
+            <p class="main-sub-heading">CGPA: 3.4</p>
+          </div>
         </div>
       </v-col>
     </v-row>
@@ -59,18 +71,17 @@ const title2 = ref(null);
 const serving1 = ref(null);
 const serving2 = ref(null);
 const serving3 = ref(null);
-const serving4 = ref(null);
 
 onMounted(() => {
   gsap.to(title1.value, {
     duration: 0.6,
-    text: "🧡Proudly Serving the Best 🧡",
+    text: "Academic Journey",
     ease: "slow(0.7,0.7,false)",
     y: 3,
   });
   gsap.to(title2.value, {
     duration: 1,
-    text: "Explore the clients Driving Business Transformation with Our HCM Solutions",
+    text: "Nurturing Knowledge, Empowering Futures",
     ease: "none",
     delay: 0.2,
   });
@@ -95,13 +106,6 @@ onMounted(() => {
     x: 1,
     delay: 0.7,
   });
-  gsap.to(serving4.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
-    delay: 0.7,
-  });
 });
 </script>
 <style scoped lang="scss">
@@ -109,38 +113,28 @@ onMounted(() => {
 
 #serving-best {
   .base-card {
-    width: 360px;
-    height: 150px;
     padding: 1.75rem 1.5rem !important;
     background: #0a0b21 !important;
     box-shadow: 0 6px 32px rgba(44, 50, 169, 0.04) !important;
     border-radius: 20px !important;
-
-    @media (max-width: map-get($breakpoints, "sm")) {
-      width: 265px;
+    &-last-card {
+      width: 50%;
     }
   }
-
-  .main-heading {
-    font-size: 43px;
-    font-weight: 600;
-    transform: translateY(-116px);
-  }
-
-  .sub-heading {
-    font-size: 14px;
-    font-weight: 300;
-    color: #54618b;
-  }
-
   .card {
-    transform: translateX(-1000px);
+    transform: translateX(-1600px);
     opacity: 1;
     display: "none";
 
     &-left {
-      transform: translateX(1000px);
+      transform: translateX(1600px);
       display: "none";
+    }
+  }
+  .text {
+    color: #90a4dd;
+    &-white {
+      color: #fff;
     }
   }
 }

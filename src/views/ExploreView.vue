@@ -6,7 +6,6 @@
         <ExpertiesAreas v-else-if="tab === 2" />
         <AiIntegration v-else-if="tab === 3" />
         <OurServices v-else-if="tab === 4" />
-        <AwardsPage v-else-if="tab === 5" />
       </v-col>
     </v-row>
   </v-container>
@@ -15,7 +14,6 @@
 <script setup lang="ts">
 import ServingBest from "@/components/explore/ServingBest.vue";
 import ExpertiesAreas from "@/components/explore/ExpertiesAreas.vue";
-import AwardsPage from "@/components/explore/AwardsPage.vue";
 import OurServices from "@/components/explore/OurServices.vue";
 import AiIntegration from "@/components/explore/AiIntegration.vue";
 
