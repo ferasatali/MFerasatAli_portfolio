@@ -1,6 +1,6 @@
 <template>
   <div>
-    Pending skkils
+    Pending
   </div>
 </template>
 

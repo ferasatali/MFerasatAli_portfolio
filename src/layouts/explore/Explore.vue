@@ -11,14 +11,18 @@
             <img src="@/assets/icons/linear/dent-(dent).svg" class="pl-7" />
           </v-tab>
 
-          <v-tab :value="3"> Skills & Interests
+          <v-tab :value="3">Projects
             <img src="@/assets/icons/linear/civic-(cvc).svg" class="pl-7" />
           </v-tab>
-          <v-tab :value="4">Contact Me
+          <v-tab :value="4">Skills & Interest
+            <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab>
+          <v-tab :value="5">Contact Me
             <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab>
         </v-tabs>
       </div>
-      <router-view />
+      <div style="max-width: 1700px;margin: 0 auto;">
+        <router-view />
+      </div>
     </div>
     <div class="mt-auto">
       <v-row align="center" class="px-10 mb-6 align-center justify-space-between">

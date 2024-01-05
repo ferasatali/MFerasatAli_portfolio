@@ -1,44 +1,81 @@
 <template>
   <section>
     <v-row align="center" justify="center">
-      <v-col
-        cols="12"
-        class="d-flex align-center justify-center flex-column mt-8"
-      >
+      <v-col cols="12" class="d-flex align-center justify-center flex-column mt-8">
         <p class="main-heading" ref="title1"></p>
         <p class="paragraph" ref="title2"></p>
       </v-col>
-      <v-col
-        cols="12"
-        class="d-flex align-center justify-center flex-wrap mt-6"
-        style="gap: 2rem"
-      >
-        <div
-          class="d-flex base-card flex-column animation-div"
-          ref="experties1"
-        >
-          <!-- <v-divider thickness="2" color="blue"/> -->
-          <p class="header-simple">Personal Projects</p>
+      <v-col cols="12" class="d-flex align-center justify-center flex-wrap mt-6" style="gap: 2rem">
+        <div class="d-flex base-card flex-column animation-div" ref="experties1">
+          <p class="header-simple">Details</p>
           <p class="main-heading1 mt-3">
-            - NRTS ( Final Year Project )
+            1- House of Tech (HOT)
             <span class="sub-heading1 ml-2 d-flex justify-end">
-              ( 08/2022 - 17-2023)
+              ( 08/2022 - 7-2023)
             </span>
           </p>
-          <p class="paragraph mt-3">
+          <div class="px-3">
             <ul>
               <li>
-                Work on Backend and Frontend of the project.
+                Integrate Recruitment portal for Hiring candidates
               </li>
               <li>
-                Work on Backend and Frontend of the project.
+                Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
+              </li>
+              <li>
+                Work on Database and API's Integration
               </li>
               <li>
                 Work on Backend and Frontend of the project.
               </li>
             </ul>
-
+          </div>
+          <v-divider thickness="2" color="blue" class="mt-3" />
+          <p class="main-heading1 mt-3">
+            2- HCMS
+            <span class="sub-heading1 ml-2 d-flex justify-end">
+              ( 07/2023 - Present)
+            </span>
           </p>
+          <div class="px-3">
+            <ul>
+              <li>
+                Application used for Online Booking of cars 
+              </li>
+              <li>
+                Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
+              </li>
+              <li>
+                Work on Database and API's Integration
+              </li>
+              <li>
+                Work on Backend and Frontend of the project.
+              </li>
+            </ul>
+          </div>
+          <!-- <v-divider thickness="2" color="blue" class="mt-3" />
+          <p class="main-heading1 mt-3">
+            3- Freelancing
+            <span class="sub-heading1 ml-2 d-flex justify-end">
+              ( 07/2023 - Present)
+            </span>
+          </p>
+          <div class="px-3">
+            <ul>
+              <li>
+                Application used for Online Booking of cars 
+              </li>
+              <li>
+                Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
+              </li>
+              <li>
+                Work on Database and API's Integration
+              </li>
+              <li>
+                Work on Backend and Frontend of the project.
+              </li>
+            </ul>
+          </div> -->
         </div>
       </v-col>
     </v-row>
@@ -63,13 +100,13 @@ const experties3 = ref(null);
 onMounted(() => {
   gsap.to(title1.value, {
     duration: 0.6,
-    text: "Areas of Our Experties",
+    text: "Professional Experience",
     ease: "slow(0.7,0.7,false)",
     x: 0,
   });
   gsap.to(title2.value, {
     duration: 1,
-    text: "Stay ahead of the game with HCMS - the ultimate tool for tracking talent performance in government, private, and educational settings.",
+    text: "Navigating Challenges and Driving Success in the Work Arena",
     ease: "none",
     delay: 1,
   });
