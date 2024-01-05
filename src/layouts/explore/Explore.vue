@@ -3,7 +3,7 @@
     <div ref="animation" class="animation">
       <div class="mt-4">
         <v-tabs v-model="tab" color="deep-white-accent-4" align-tabs="center" @update:model-value="setTab">
-          <v-tab :value="1">Education
+          <v-tab :value="1">Journey
             <img src="@/assets/icons/linear/augur-(rep).svg" class="pl-7" />
           </v-tab>
 
@@ -14,8 +14,8 @@
           <v-tab :value="3">Projects
             <img src="@/assets/icons/linear/civic-(cvc).svg" class="pl-7" />
           </v-tab>
-          <v-tab :value="4">Skills & Interest
-            <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab>
+          <!-- <v-tab :value="4">Skills & Interest
+            <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab> -->
           <v-tab :value="5">Contact Me
             <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab>
         </v-tabs>

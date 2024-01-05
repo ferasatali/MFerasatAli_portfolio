@@ -1,18 +1,11 @@
 <template>
   <section id="serving-best">
-    <v-row align="center" justify="center">
-      <v-col
-        cols="12"
-        class="d-flex align-center justify-center flex-column mt-9"
-      >
+    <v-row align="center">
+      <v-col cols="12" class="d-flex align-center justify-center flex-column mt-9">
         <p class="main-heading" ref="title1"></p>
         <p class="sub-heading" ref="title2"></p>
       </v-col>
-      <v-col
-        cols="12"
-        class="d-flex align-center justify-center mt-7 flex-wrap"
-        style="gap: 1rem"
-      >
+      <v-col cols="6" class="d-flex align-center justify-center mt-7 flex-wrap" style="gap: 1rem">
         <div class="base-card card" ref="serving1">
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
@@ -36,13 +29,7 @@
             </div>
           </div>
         </div>
-      </v-col>
-      <v-col
-        cols="12"
-        class="d-flex align-center justify-center mt-1 flex-wrap"
-        style="gap: 1rem"
-      >
-        <div class="base-card base-card-last-card card-left" ref="serving3">
+        <div class="base-card card card-left" ref="serving3">
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
               Bachelors
@@ -55,6 +42,27 @@
             <p class="main-sub-heading">CGPA: 3.4</p>
           </div>
         </div>
+      </v-col>
+      <v-col cols="6">
+        <div class="base-card d-flex align-center flex-column card card-left" ref="serving4">
+          <div class="d-flex flex-column" style="gap: 0.6rem">
+            <p class="header-simple">
+              Skills
+            </p>
+          </div>
+          <div>
+            <v-chip v-for="item in array" :key="item" class="ma-2"> {{ item }} </v-chip>
+          </div>
+          <div class="d-flex flex-column" style="gap: 0.6rem">
+            <p class="header-simple">
+              Interests
+            </p>
+          </div>
+          <div>
+            <v-chip v-for="item in interest" :key="item" class="ma-2"> {{ item }} </v-chip>
+          </div>
+        </div>
+
       </v-col>
     </v-row>
   </section>
@@ -71,7 +79,29 @@ const title2 = ref(null);
 const serving1 = ref(null);
 const serving2 = ref(null);
 const serving3 = ref(null);
-
+const serving4 = ref(null);
+const serving5 = ref(null);
+const array = ref(["JavaScript",
+  "Node.js",
+  "Vue.js",
+  "Laravel",
+  "C++",
+  "Vuex",
+  "TypeScript",
+  "Vue.js",
+  "Laravel",
+  "C++",
+  "Vuex",
+  "TypeScript", "Vue.js",
+  "Laravel",
+  "C++",
+  "Vuex",
+  "TypeScript",
+  "Python"]);
+const interest = ref(["Cricket",
+  "Reading",
+  "Coding",
+  "Netflix"]);
 onMounted(() => {
   gsap.to(title1.value, {
     duration: 0.6,
@@ -106,6 +136,20 @@ onMounted(() => {
     x: 1,
     delay: 0.7,
   });
+  gsap.to(serving4.value, {
+    duration: 1,
+    opacity: 1,
+    display: "block",
+    x: 1,
+    delay: 0.7,
+  });
+  gsap.to(serving5.value, {
+    duration: 1,
+    opacity: 1,
+    display: "block",
+    x: 1,
+    delay: 1,
+  });
 });
 </script>
 <style scoped lang="scss">
@@ -117,10 +161,8 @@ onMounted(() => {
     background: #0a0b21 !important;
     box-shadow: 0 6px 32px rgba(44, 50, 169, 0.04) !important;
     border-radius: 20px !important;
-    &-last-card {
-      width: 50%;
-    }
   }
+
   .card {
     transform: translateX(-1600px);
     opacity: 1;
@@ -131,8 +173,10 @@ onMounted(() => {
       display: "none";
     }
   }
+
   .text {
     color: #90a4dd;
+
     &-white {
       color: #fff;
     }

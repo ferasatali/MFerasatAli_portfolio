@@ -10,9 +10,10 @@
           <p class="header-simple">Details</p>
           <p class="main-heading1 mt-3">
             1- House of Tech (HOT)
-            <span class="sub-heading1 ml-2 d-flex justify-end">
-              ( 08/2022 - 7-2023)
-            </span>
+          <span class="sub-heading1"> - Full Stack Developer </span>
+          <span class="sub-heading1 ml-2 d-flex justify-end">
+            ( 08/2022 - 7-2023)
+          </span>
           </p>
           <div class="px-3">
             <ul>
@@ -32,7 +33,7 @@
           </div>
           <v-divider thickness="2" color="blue" class="mt-3" />
           <p class="main-heading1 mt-3">
-            2- HCMS
+            2- HCMS <span class="sub-heading1"> - Full Stack Software Engineer  </span>
             <span class="sub-heading1 ml-2 d-flex justify-end">
               ( 07/2023 - Present)
             </span>
@@ -40,7 +41,7 @@
           <div class="px-3">
             <ul>
               <li>
-                Application used for Online Booking of cars 
+                Application used for Online Booking of cars
               </li>
               <li>
                 Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
