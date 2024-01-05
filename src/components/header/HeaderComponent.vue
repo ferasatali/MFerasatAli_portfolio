@@ -39,8 +39,8 @@
           <div
             class="d-flex align-center flex-row mt-3 base-card base-card-menu"
             style="gap: 0.6rem"
-            v-for="item in contactMe"
-            :key="item"
+            v-for="(item,index) in contactMe"
+            :key="index"
           >
             <img width="25px" class="social-icons" :src="item.icon" />
             <p>

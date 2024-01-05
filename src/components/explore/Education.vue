@@ -51,7 +51,7 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="item in array" :key="item" class="ma-2"> {{ item }} </v-chip>
+            <v-chip v-for="(item, index) in array" :key="index" class="ma-2"> {{ item }} </v-chip>
           </div>
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
@@ -59,7 +59,7 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="item in interest" :key="item" class="ma-2"> {{ item }} </v-chip>
+            <v-chip v-for="(item, index) in interest" :key="index" class="ma-2"> {{ item }} </v-chip>
           </div>
         </div>
 
