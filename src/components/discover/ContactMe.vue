@@ -13,15 +13,15 @@
         </div>
       </v-col>
     </v-row>
-    <v-row align="center" class=" px-2 px-md-5">
-      <v-col cols="12" sm="6" class="mb-0 pb-0">
+    <v-row align="center" class=" px-2 px-md-5 mt-4">
+      <v-col cols="12" sm="6" class="my-0 py-0">
         <div class="form-field">
           <v-text-field v-model="firstName" class="form-field-input" variant="solo" placeholder="First Name" />
         </div>
       </v-col>
-      <v-col cols="12" sm="6" class="mb-0 pb-0 ml-0 pl-0">
+      <v-col cols="12" sm="6" class="my-0 py-0 ">
         <div class="form-field">
-          <v-text-field v-model="lastName" class="form-field-input" variant="solo" placeholder="Last Name" />
+          <v-text-field v-model="lastName" class="form-field-input" variant="solo" placeholder="First Name" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="my-0 py-0">
@@ -31,7 +31,7 @@
       </v-col>
       <v-col cols="12" sm="6" class="my-0 py-0">
         <div class="form-field">
-          <v-text-field v-model="email" class="form-field-input" variant="solo" placeholder="Phone Number" />
+          <v-text-field v-model="phoneNumber" class="form-field-input" variant="solo" placeholder="phoneNumber" type="number" />
         </div>
       </v-col>
       <v-col cols="12" class="my-0 py-0">
@@ -56,6 +56,7 @@ const firstName = ref("");
 const lastName = ref("");
 const email = ref("");
 const message = ref("");
+const phoneNumber = ref("");
 
 onMounted(() => {
   store.setNavBar("ContactUs");

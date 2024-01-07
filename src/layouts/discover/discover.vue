@@ -14,8 +14,6 @@
           <v-tab :value="3">Projects
             <img src="@/assets/icons/linear/civic-(cvc).svg" class="pl-7" />
           </v-tab>
-          <!-- <v-tab :value="4">Skills & Interest
-            <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab> -->
           <v-tab :value="5">Contact Me
             <img src="@/assets/icons/linear/wanchain-(wan).svg" class="pl-7" /></v-tab>
         </v-tabs>
