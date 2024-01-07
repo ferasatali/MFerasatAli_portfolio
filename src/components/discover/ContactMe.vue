@@ -31,13 +31,19 @@
       </v-col>
       <v-col cols="12" sm="6" class="my-0 py-0">
         <div class="form-field">
-          <v-text-field v-model="phoneNumber" class="form-field-input" variant="solo" placeholder="phoneNumber" type="number" />
+          <v-text-field v-model="phoneNumber" class="form-field-input" variant="solo" placeholder="phoneNumber"
+            type="number" />
         </div>
       </v-col>
       <v-col cols="12" class="my-0 py-0">
         <div class="form-field">
           <v-textarea v-model="message" rows="6" class="form-field-input" variant="solo" placeholder="Message" />
         </div>
+      </v-col>
+      <v-col cols="12" class="d-flex align-center justify-end">
+        <v-btn variant="text" class="contact-btn">
+          Submit
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -136,5 +142,12 @@ onMounted(() => {
   transform: translateX(-200px);
   opacity: 0;
   display: none;
+}
+
+.contact-btn {
+  border-radius: 16px;
+  border: 2px solid #091235;
+  font-size: 13px;
+  color: #5fcfac !important;
 }
 </style>
