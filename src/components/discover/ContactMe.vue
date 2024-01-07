@@ -87,8 +87,8 @@ onMounted(() => {
   color: #54618b;
 }
 
-.form-field ::v-deep {
-  .form-field-label {
+.form-field {
+  :deep(.form-field-label) {
     font-size: 14px;
     line-height: 16px;
     text-transform: capitalize;
@@ -97,7 +97,7 @@ onMounted(() => {
     display: block;
   }
 
-  .form-field-input {
+  :deep(.form-field-input) {
     .v-input__control {
       .v-field.v-field--no-label.v-field--variant-solo.v-theme--dark.v-locale--is-ltr {
         border-radius: 13px !important;
