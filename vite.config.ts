@@ -28,7 +28,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/', 
+  base: '/home', 
   define: { 'process.env': {} },
   resolve: {
     alias: {
