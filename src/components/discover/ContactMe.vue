@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="12">
+    <v-row align="center">
+      <v-col cols="12" class=" px-2 px-md-5">
         <div ref="contact" class="contact">
           <p class="main-heading">Contact Me</p>
         </div>
@@ -12,22 +12,24 @@
           </p>
         </div>
       </v-col>
-      <v-col cols="6" class="mb-0 pb-0">
+    </v-row>
+    <v-row align="center" class=" px-2 px-md-5">
+      <v-col cols="12" sm="6" class="mb-0 pb-0">
         <div class="form-field">
           <v-text-field v-model="firstName" class="form-field-input" variant="solo" placeholder="First Name" />
         </div>
       </v-col>
-      <v-col cols="6" class="mb-0 pb-0 ml-0 pl-0">
+      <v-col cols="12" sm="6" class="mb-0 pb-0 ml-0 pl-0">
         <div class="form-field">
           <v-text-field v-model="lastName" class="form-field-input" variant="solo" placeholder="Last Name" />
         </div>
       </v-col>
-      <v-col cols="6" class="my-0 py-0">
+      <v-col cols="12" sm="6" class="my-0 py-0">
         <div class="form-field">
           <v-text-field v-model="email" class="form-field-input" variant="solo" placeholder="Email" />
         </div>
       </v-col>
-      <v-col cols="6" class="my-0 py-0">
+      <v-col cols="12" sm="6" class="my-0 py-0">
         <div class="form-field">
           <v-text-field v-model="email" class="form-field-input" variant="solo" placeholder="Phone Number" />
         </div>

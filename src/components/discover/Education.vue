@@ -5,7 +5,7 @@
         <p class="main-heading" ref="title1"></p>
         <p class="sub-heading" ref="title2"></p>
       </v-col>
-      <v-col cols="6" class="d-flex align-center justify-center mt-7 flex-wrap" style="gap: 1rem">
+      <v-col cols="12" sm="6" class="d-flex align-center justify-center mt-7 flex-wrap" style="gap: 1rem">
         <div class="base-card card" ref="serving1">
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
@@ -43,7 +43,7 @@
           </div>
         </div>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" sm="6">
         <div class="base-card d-flex align-center flex-column card card-left" ref="serving4">
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">

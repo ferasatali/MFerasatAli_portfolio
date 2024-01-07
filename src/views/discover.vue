@@ -13,11 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import Education from "@/components/explore/Education.vue";
-import WorkExperience from "@/components/explore/WorkExperience.vue";
-import OurServices from "@/components/explore/OurServices.vue";
-import PersonalProject from "@/components/explore/PersonalProject.vue";
-import ContactMe from "@/components/explore/ContactMe.vue";
+import Education from "@/components/discover/Education.vue";
+import WorkExperience from "@/components/discover/WorkExperience.vue";
+import OurServices from "@/components/discover/OurServices.vue";
+import PersonalProject from "@/components/discover/PersonalProject.vue";
+import ContactMe from "@/components/discover/ContactMe.vue";
 
 import { AppStore } from "@/store/app";
 import { computed } from "vue";

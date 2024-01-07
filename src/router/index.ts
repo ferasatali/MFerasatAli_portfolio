@@ -10,18 +10,18 @@ const routes = [
       {
         path: '/home',
         name: 'Home',
-        component: () => import('@/views/Home.vue'),
+        component: () => import('@/views/home.vue'),
       },
     ],
   },
   {
     path: '/discover',
-    component: () => import('@/layouts/explore/Explore.vue'),
+    component: () => import('@/layouts/discover/discover.vue'),
     children: [
       {
         path: '',
-        name: 'Explore',
-        component: () => import('@/views/ExploreView.vue'),
+        name: 'discover',
+        component: () => import('@/views/discover.vue'),
       },
     ],
   },
