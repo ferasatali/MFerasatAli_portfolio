@@ -28,7 +28,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/ferasat.github.io/",
+  base: "/ferasatali.github.io/",
   // base:'./',
   define: { "process.env": {} },
   resolve: {
