@@ -76,32 +76,32 @@ const contactMe = ref([
   {
     name: "GitHub",
     link: "https://github.com/ferasatali",
-    icon: "src/assets/images/github.png",
+    icon: "/github.png",
   },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/ali-ferasat-ali-7b1b3b1b0/",
-    icon: "src/assets/images/linkedin-02.png",
+    icon: "/linkedin-02.png",
   },
   {
     name: "GitHub Aslase",
     link: "https://github.com/fali-aslase",
-    icon: "src/assets/images/github.png",
+    icon: "/github.png",
   },
   {
     name: "Twitter",
     link: "https://twitter.com/AliFerasat",
-    icon: "src/assets/images/twitter.png",
+    icon: "/twitter.png",
   },
   {
     name: "Instagram",
     link: "https://www.instagram.com/mferasatali/",
-    icon: "src/assets/images/instagram.png",
+    icon: "/instagram.png",
   },
   {
     name: "Facebook",
     link: "https://www.facebook.com/mferasatali",
-    icon: "src/assets/images/facebook-01.png",
+    icon: "/facebook-01.png",
   },
 ]);
 </script>
