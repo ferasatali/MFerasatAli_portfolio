@@ -84,6 +84,7 @@ onMounted(() => {
         map-get($map: $dark-colors, $key: "border"),
         map-get($map: $dark-colors, $key: "border"));
     box-shadow: 0px 4px 40px 0px rgba(103, 39, 236, 0.16);
+    line-height: 1rem;
   }
 
   &-title {
