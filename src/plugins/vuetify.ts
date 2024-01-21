@@ -34,6 +34,7 @@ export default createVuetify({
           link: "#1c53f4",
           "base-text": "#54618b",
           "dark-bg": "#212444",
+          "grey": "#BDBDBD",
         },
       },
       dark:{
@@ -54,6 +55,7 @@ export default createVuetify({
           link: "#1c53f4",
           "base-text": "#54618b",
           "dark-bg": "#212444",
+          "grey": "#BDBDBD",
         }
       }
     },

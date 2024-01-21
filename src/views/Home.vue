@@ -3,14 +3,15 @@
     <!-- Tagline -->
     <div class="home-tagline d-flex align-center justify-start py-3 px-4">
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
-      <p class="base-body-text">Introduction</p>
+      <p class="base-body-text"> Introduction </p>
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
     </div>
     <!-- Main heading -->
     <div class="d-flex align-center flex-row flex-wrap">
       <div class="image">
-        <div class="base-card mr-md-4" ref="image">
+        <div class="base-card mr-md-4 d-flex align-center flex-column" ref="image">
           <img src="@/assets/mferasatali.png" alt="ferasat" />
+          <p class="header-simple mt-4 text-grey"> {{ experienceYears - 1 }}.7+ Year Experience </p>
         </div>
       </div>
       <div class="mt-5 mt-md-12 text-center home-title">
@@ -27,13 +28,23 @@
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import moment from 'moment';
+
+
 gsap.registerPlugin(TextPlugin);
+
+const startDate = moment('2022-01-01');
+const currentDate = moment();
+const experienceYears = ref(0);
+
 const title1 = ref(null);
 const title2 = ref(null);
 const description = ref(null);
 const image = ref(null);
 
 onMounted(() => {
+  calculateExperience();
+
   gsap.to(image.value, {
     duration: 1,
     display: "block",
@@ -61,6 +72,9 @@ onMounted(() => {
     delay: 1,
   });
 });
+const calculateExperience = () => {
+  experienceYears.value = currentDate.diff(startDate, 'years');
+};
 </script>
 
 <style scoped lang="scss">
