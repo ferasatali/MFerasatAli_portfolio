@@ -1,3 +1,3 @@
-import * as IBlog from "@/interfaces/blog.interface";
+import * as IProjects from "@/interfaces/projects.interface";
 
-export { IBlog };
+export { IProjects };

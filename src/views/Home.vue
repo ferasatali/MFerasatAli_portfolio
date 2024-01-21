@@ -115,7 +115,7 @@ const calculateExperience = () => {
       -moz-background-clip: text;
       -ms-background-clip: text;
     }
-  }
+  } 
 
   &-description {
     width: 70%;
