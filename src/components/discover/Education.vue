@@ -51,7 +51,8 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="(item, index) in array" :key="index" class="ma-2"> {{ item }} </v-chip>
+            <v-chip v-for="(item, index) in array" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item }}
+            </v-chip>
           </div>
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
@@ -59,7 +60,8 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="(item, index) in interest" :key="index" class="ma-2"> {{ item }} </v-chip>
+            <v-chip v-for="(item, index) in interest" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item }}
+            </v-chip>
           </div>
         </div>
 
@@ -84,24 +86,60 @@ const serving5 = ref(null);
 const array = ref(["JavaScript",
   "Node.js",
   "Vue.js",
-  "Laravel",
   "C++",
   "Vuex",
   "TypeScript",
-  "Vue.js",
   "Laravel",
-  "C++",
-  "Vuex",
-  "TypeScript", "Vue.js",
-  "Laravel",
-  "C++",
-  "Vuex",
-  "TypeScript",
-  "Python"]);
+  "Python",
+  "Pinia",
+  "Express.js",
+  "MongoDB",
+  "MySQL",
+  "HTML",
+  "Sequelize",
+  "CSS",
+  "Sass",
+  "TailwindCSS",
+  "Bootstrap",
+  "Vuetify",
+  "Git",
+  "GitHub",
+  "NPM",
+  "Composer",
+  "VS Code",
+  "PyCharm",
+  "Postman",
+  "Svelte",
+  // "React", 
+  // "Next.js",
+  // "Nuxt.js",
+  // "Angular",
+  // "Django",
+  // "Flask",
+  // "Java",
+  // "C#",
+  "PHP",
+  "C"
+]);
+
 const interest = ref(["Cricket",
   "Reading",
   "Coding",
   "Netflix"]);
+
+const colorKeys = [
+  "active-green",
+  "leadership-management",
+  "soft-skill",
+  "it-and-software",
+  "hard-skills",
+  "green-skills",
+  "link",
+];
+
+const getColorName = () => {
+  return colorKeys[Math.floor(Math.random() * colorKeys.length)];
+};
 onMounted(() => {
   gsap.to(title1.value, {
     duration: 0.6,
