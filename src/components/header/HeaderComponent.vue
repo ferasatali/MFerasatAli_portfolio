@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-center justify-space-between flex-wrap pa-4">
     <RouterLink to="/">
-      <img width="65px" src="@/assets/45.png" class="mr-4" />
+      <img width="100px" src="@/assets/mfa-logo.png" class="mr-4" />
     </RouterLink>
     <v-spacer />
     <div>
