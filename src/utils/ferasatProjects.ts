@@ -1,4 +1,4 @@
-import IProjects from "@/interfaces/projects.interface";
+import { IProjects } from "@/interfaces/index";
 
 export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
   {
