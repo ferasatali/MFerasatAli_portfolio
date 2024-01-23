@@ -72,6 +72,8 @@ const close = async () => {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss"; // Import your variable styles
+
 .social-icons {
   border-radius: 17px;
   border: 2px solid #1c1439;
@@ -85,8 +87,15 @@ const close = async () => {
 }
 
 .btn-explore {
-  font-size: 11px;
-  text-align: center;
+  border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
+  border-radius: 0.8rem !important;
+  background: linear-gradient(180deg,
+      rgba(28, 83, 244, 0.1) -52.63%,
+      rgba(3, 0, 22, 0.54) 51.46%,
+      rgba(28, 83, 244, 0.1) 142.11%),
+    linear-gradient(0deg,
+      map-get($map: $dark-colors, $key: "border"),
+      map-get($map: $dark-colors, $key: "border")) !important;
   position: fixed;
   bottom: 0;
 }
