@@ -51,7 +51,7 @@
           <div class="d-flex flex-column mt-2 base-card base-card-menu">
             <v-btn
               variant="text"
-              href="https://drive.google.com/file/d/1Gg-K7FMplVQILISVQGti1nb8j-Pi-TYX/view?usp=sharing"
+              href="https://drive.google.com/file/d/1NKosJ2dj94GCBNEzmjgpjcA82yuKfUsp/view?usp=sharing"
               target="_blank"
             >
             <v-icon class="mr-2"> mdi-download </v-icon>

@@ -4,7 +4,9 @@ export interface PersonalProjectsPayload {
   date: string;
   content: string[];
   links: Links[];
-  animation: string
+  animation: string;
+  projectImages: string[];
+  selected: Boolean;
 }
 export interface Links {
   url: string;

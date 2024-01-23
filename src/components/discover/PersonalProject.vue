@@ -6,7 +6,7 @@
         <p class="paragraph" ref="title2"></p>
       </v-col>
       <v-col cols="12" md="6" class="d-flex align-center justify-center flex-wrap" style="gap: 2rem"
-        v-for="(item, index) in FerasatProjects" :key="index">
+        v-for="(item, index) in projects" :key="index">
         <div class="d-flex base-card flex-column" :class="`${item.animation}`" :ref="animationPersonalProject[index]">
           <p class="header-simple">{{ item.title }} <span v-show="item.subtitle">
               ( {{ item.subtitle }} )
@@ -30,11 +30,13 @@
             </p>
           </div>
           <div class="d-flex align-center justify-end ">
-            <v-btn variant="text" class="text-capitalize" @click="onClick"> Project images (work on progress) <v-icon> {{
-              picture ?
-              'mdi-arrow-up' : 'mdi-arrow-down' }}</v-icon> </v-btn>
+            <v-btn variant="text" class="text-capitalize" @click="showProjectImages(item.title)"> Project images (work on
+              progress)
+              <v-icon> {{
+                item.selected ?
+                'mdi-arrow-up' : 'mdi-arrow-down' }}</v-icon> </v-btn>
           </div>
-          <div class="d-flex align-center justify-center base-card mt-3" style="width:100%" v-if="picture">
+          <div class="d-flex align-center justify-center base-card mt-3" style="width:100%" v-if="item.selected">
             <v-carousel show-arrows="hover" height="400">
               <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover></v-carousel-item>
               <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
@@ -52,14 +54,15 @@ import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { FerasatProjects } from "@/utils/ferasatProjects"
+import { IProjects } from "@/interfaces";
 gsap.registerPlugin(TextPlugin);
 
+const projects = ref(FerasatProjects);
 
 const title1 = ref(null);
 const title2 = ref(null);
-const picture = ref(false);
 
-const animationPersonalProject = Array.from({ length: FerasatProjects.length }, (_, i) => ref(null));
+const animationPersonalProject = Array.from({ length: projects.value.length }, (_, i) => ref(null));
 
 onMounted(() => {
   gsap.to(title1.value, {
@@ -74,7 +77,6 @@ onMounted(() => {
     ease: "none",
     delay: 1,
   });
-
   animationPersonalProject.forEach((anim, index) => {
     gsap.to(anim.value, {
       duration: 1,
@@ -87,8 +89,13 @@ onMounted(() => {
   });
 });
 
-const onClick = () => {
-  picture.value = !picture.value;
+const showProjectImages = (title: string) => {
+  projects.value = projects.value.map((item): IProjects.PersonalProjectsPayload => {
+    return {
+      ...item,
+      selected:  item.selected ? false: title === item.title,
+    };
+  });
 };
 
 </script>

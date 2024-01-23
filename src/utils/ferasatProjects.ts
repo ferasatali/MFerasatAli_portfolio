@@ -24,6 +24,8 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-1",
+    projectImages: [""],
+    selected: false,
   },
   {
     title: "The95Star",
@@ -43,6 +45,8 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-2",
+    projectImages: [""],
+    selected: false,
   },
   {
     title: "HCMS",
@@ -62,6 +66,8 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-3",
+    projectImages: [""],
+    selected: false,
   },
   {
     title: "Inception Recruiment Portal",
@@ -81,6 +87,8 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-4",
+    projectImages: [""],
+    selected: false,
   },
   {
     title: "HCMS Landing Page",
@@ -100,6 +108,8 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-4",
+    projectImages: [""],
+    selected: false,
   },
   {
     title: "ESE",
@@ -118,5 +128,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-4",
+    projectImages: [""],
+    selected: false,
   },
 ];
