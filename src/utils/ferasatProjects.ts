@@ -56,6 +56,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       "HCMS is the Human Capital Mangement System",
       "Technologies: NodeJs, VueJs, TypeScript, Google API, Express Js, PostGre SQL",
       "Integrate Design and Structure for hcms.ai recruitment portal",
+      "Integrate Chat Bot for the recruitment portal",
       "Working as a Frontend Developer",
     ],
     links: [
@@ -70,7 +71,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
     selected: false,
   },
   {
-    title: "Inception Recruiment Portal",
+    title: "QudraTech.AI Portal",
     subtitle: "HCMS",
     date: "07/2023 - Present",
     content: [
@@ -81,7 +82,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
     ],
     links: [
       {
-        name: "Inception",
+        name: "QudraTech AI",
         color: "leadership-management",
         url: "https://registration-aitelent.hcms.ai/auth/dashboard",
       },
@@ -128,6 +129,26 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-4",
+    projectImages: [""],
+    selected: false,
+  },
+  {
+    title: "Education Portal",
+    subtitle: "HCMS",
+    date: "07/2023 - Present",
+    content: [
+      "Technologies: Vue2, TypeScript, Axios, Vuetify, PostGre SQL, NodeJs, Express Js",
+      "Implement the Hiring platform structure of HCMS",
+      "Candidate Hiring Process for HCMS"
+    ],
+    links: [
+      {
+        name: "ESE Portal",
+        color: "leadership-management",
+        url: "https://edu.hcms.ai/auth/dashboard",
+      },
+    ],
+    animation: "animation-2",
     projectImages: [""],
     selected: false,
   },
