@@ -105,7 +105,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       {
         name: "Hcms Landing Page",
         color: "leadership-management",
-        url: "https://landingpage-staging.hcms.ai/",
+        url: "https://hcms.ai/",
       },
     ],
     animation: "animation-4",
