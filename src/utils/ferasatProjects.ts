@@ -100,6 +100,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       "Technologies: Vue3, TypeScript, Axios, Vuetify, GSAP Animation",
       "Work on Integration of whole landing page structure",
       "Designs and Animations Integration",
+      "Integrate Chat Bot for the HCMS.AI"
     ],
     links: [
       {
