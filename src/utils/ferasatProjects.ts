@@ -84,10 +84,10 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       {
         name: "QudraTech AI",
         color: "leadership-management",
-        url: "https://registration-aitelent.hcms.ai/auth/dashboard",
+        url: "https://www.qudra-tech.ai/auth/dashboard",
       },
     ],
-    animation: "animation-4",
+    animation: "animation-5",
     projectImages: [""],
     selected: false,
   },
@@ -109,7 +109,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
         url: "https://hcms.ai/",
       },
     ],
-    animation: "animation-4",
+    animation: "animation-6",
     projectImages: [""],
     selected: false,
   },
@@ -139,14 +139,35 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
     date: "07/2023 - Present",
     content: [
       "Technologies: Vue2, TypeScript, Axios, Vuetify, PostGre SQL, NodeJs, Express Js",
-      "Implement the Hiring platform structure of HCMS",
-      "Candidate Hiring Process for HCMS"
+      "Implement the design and structure for recruitment process",
+      "Integarte the process of applying for the job and give the test",
     ],
     links: [
       {
         name: "ESE Portal",
         color: "leadership-management",
         url: "https://edu.hcms.ai/auth/dashboard",
+      },
+    ],
+    animation: "animation-2",
+    projectImages: [""],
+    selected: false,
+  },
+  {
+    title: "Hiring Portal",
+    subtitle: "HCMS",
+    date: "07/2023 - Present",
+    content: [
+      "Technologies: Vue2, TypeScript, Axios, Vuetify, PostGre SQL, NodeJs, Express Js",
+      "Integrate the process to onboard the candidate",
+      "Integrate the process for Hiring Manager to create the job and post it",
+      "Integrate the process for Hiring Manager to manage the recruiter and candidate",
+    ],
+    links: [
+      {
+        name: "Hiring Portal",
+        color: "leadership-management",
+        url: "https://hiring.hcms.ai/",
       },
     ],
     animation: "animation-2",

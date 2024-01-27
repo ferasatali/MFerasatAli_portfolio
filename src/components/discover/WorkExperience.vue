@@ -6,97 +6,40 @@
         <p class="paragraph" ref="title2"></p>
       </v-col>
       <v-col cols="12" class="d-flex align-center justify-center flex-wrap mt-6" style="gap: 2rem">
-        <div class="d-flex base-card flex-column animation-div" ref="experties1">
+        <div class="d-flex base-card flex-column animation-div" ref="workExperienceAnimation">
           <p class="header-simple">Details</p>
-          <p class="main-heading1 mt-3">
-            1- House of Tech (HOT)
-          <span class="sub-heading1"> - Full Stack Developer </span>
-          <span class="sub-heading1 ml-2 d-flex justify-end">
-            ( 08/2022 - 7-2023)
-          </span>
-          </p>
-          <div class="px-3">
-            <ul>
-              <li>
-                Integrate Recruitment portal for Hiring candidates
-              </li>
-              <li>
-                Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
-              </li>
-              <li>
-                Work on Database and API's Integration
-              </li>
-              <li>
-                Work on Backend and Frontend of the project.
-              </li>
-            </ul>
+          <div v-for="(experience, index) in FerasatExperience" :key="index">
+            <p class="main-heading1 mt-3">
+              {{ index + 1 }} - {{ experience.companyName }}
+              <span class="sub-heading1"> - {{ experience.role }} </span>
+              <span class="sub-heading1 ml-2 d-flex justify-end">
+                {{ experience.duration }}
+              </span>
+            </p>
+            <div class="px-3">
+              <ul v-for="(data, ind) in experience.content" :key="ind">
+                <li>{{ data }}</li>
+              </ul>
+            </div>
+            <v-divider thickness="2" color="blue" class="mt-3" />
           </div>
-          <v-divider thickness="2" color="blue" class="mt-3" />
-          <p class="main-heading1 mt-3">
-            2- HCMS <span class="sub-heading1"> - Full Stack Software Engineer  </span>
-            <span class="sub-heading1 ml-2 d-flex justify-end">
-              ( 07/2023 - Present)
-            </span>
-          </p>
-          <div class="px-3">
-            <ul>
-              <li>
-                Application used for Online Booking of cars
-              </li>
-              <li>
-                Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
-              </li>
-              <li>
-                Work on Database and API's Integration
-              </li>
-              <li>
-                Work on Backend and Frontend of the project.
-              </li>
-            </ul>
-          </div>
-          <!-- <v-divider thickness="2" color="blue" class="mt-3" />
-          <p class="main-heading1 mt-3">
-            3- Freelancing
-            <span class="sub-heading1 ml-2 d-flex justify-end">
-              ( 07/2023 - Present)
-            </span>
-          </p>
-          <div class="px-3">
-            <ul>
-              <li>
-                Application used for Online Booking of cars 
-              </li>
-              <li>
-                Technologies: NodeJs, VueJs, Javascript, Google API, Express Js
-              </li>
-              <li>
-                Work on Database and API's Integration
-              </li>
-              <li>
-                Work on Backend and Frontend of the project.
-              </li>
-            </ul>
-          </div> -->
         </div>
       </v-col>
     </v-row>
   </section>
 </template>
-<!-- <v-btn variant="text" elevation="0" class="mt-3 learnmore text-capitalize">
-            the95Star
-          </v-btn> -->
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { FerasatExperience } from "@/utils/ferasatExperiences";
+import exp from "constants";
 
 gsap.registerPlugin(TextPlugin);
 
 const title1 = ref(null);
 const title2 = ref(null);
-const experties1 = ref(null);
-const experties2 = ref(null);
-const experties3 = ref(null);
+const workExperienceAnimation = ref(null);
 
 onMounted(() => {
   gsap.to(title1.value, {
@@ -111,21 +54,7 @@ onMounted(() => {
     ease: "none",
     delay: 1,
   });
-  gsap.to(experties1.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
-  });
-  gsap.to(experties3.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
-    y: 1,
-    delay: 0.4,
-  });
-  gsap.to(experties2.value, {
+  gsap.to(workExperienceAnimation.value, {
     duration: 1,
     opacity: 1,
     display: "block",

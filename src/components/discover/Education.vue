@@ -5,53 +5,33 @@
         <p class="main-heading" ref="title1"></p>
         <p class="sub-heading" ref="title2"></p>
       </v-col>
+      <!-- Education -->
       <v-col cols="12" sm="6" class="d-flex align-center justify-center mt-7 flex-wrap" style="gap: 1rem">
-        <div class="base-card card" ref="serving1">
+        <div v-for="(education, index) in FerasatEducation" :key="index" class="base-card"
+          :class="`${education.animation}`" :ref="animationEducation[index]">
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
-              Matric <span class="main-sub-heading text"> - Science </span>
+              {{ education.degree }} <span class="main-sub-heading text"> - {{ education.studyIn }} </span>
             </p>
-            <p class="main-sub-heading">Laural Bank Public School (LPS)</p>
+            <p class="main-sub-heading">{{ education.institutionName }}</p>
             <div class="d-flex justify-end">
-              <p class="sub-heading text-whitew">01/2010 - 03/2018</p>
+              <p class="sub-heading text-whitew">{{ education.duration }}</p>
             </div>
-          </div>
-        </div>
-        <div class="base-card card" ref="serving2">
-          <div class="d-flex flex-column" style="gap: 0.6rem">
-            <p class="header-simple">
-              Intermediate
-              <span class="main-sub-heading text"> - Science </span>
-            </p>
-            <p class="main-sub-heading">Punjab Group of Colleges (PGC)</p>
-            <div class="d-flex justify-end">
-              <p class="sub-heading text-whitew">01/2018 - 03/2019</p>
-            </div>
-          </div>
-        </div>
-        <div class="base-card card card-left" ref="serving3">
-          <div class="d-flex flex-column" style="gap: 0.6rem">
-            <p class="header-simple">
-              Bachelors
-              <span class="main-sub-heading text"> - Computer Science </span>
-            </p>
-            <p class="main-sub-heading">Univeristy of Central Punjab (UCP)</p>
-            <div class="d-flex justify-end">
-              <p class="sub-heading text-whitew">08/2019 - 08/2023</p>
-            </div>
-            <p class="main-sub-heading">CGPA: 3.4</p>
+            <p class="main-sub-heading" v-show="education.marks"> {{ education.marks }}</p>
           </div>
         </div>
       </v-col>
+      <!-- Skills & Interests -->
       <v-col cols="12" sm="6">
-        <div class="base-card d-flex align-center flex-column card card-left" ref="serving4">
+        <div class="base-card d-flex align-center flex-column animation animation-skills-interest"
+          ref="skillsAndInterestAnimation">
           <div class="d-flex flex-column" style="gap: 0.6rem">
             <p class="header-simple">
               Skills
             </p>
           </div>
           <div>
-            <v-chip v-for="(item, index) in array" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item }}
+            <v-chip v-for="(item, index) in FerasatSkills" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item }}
             </v-chip>
           </div>
           <div class="d-flex flex-column" style="gap: 0.6rem">
@@ -60,7 +40,8 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="(item, index) in interest" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item }}
+            <v-chip v-for="(item, index) in FerasatInterests" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item
+            }}
             </v-chip>
           </div>
         </div>
@@ -73,59 +54,14 @@
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-
+import { FerasatInterests, FerasatSkills, FerasatEducation } from "@/utils/ferasatJourney";
 gsap.registerPlugin(TextPlugin);
 
 const title1 = ref(null);
 const title2 = ref(null);
-const serving1 = ref(null);
-const serving2 = ref(null);
-const serving3 = ref(null);
-const serving4 = ref(null);
-const serving5 = ref(null);
-const array = ref(["JavaScript",
-  "Node.js",
-  "Vue.js",
-  "C++",
-  "Vuex",
-  "TypeScript",
-  "Laravel",
-  "Python",
-  "Pinia",
-  "Express.js",
-  "MongoDB",
-  "MySQL",
-  "HTML",
-  "Sequelize",
-  "CSS",
-  "Sass",
-  "TailwindCSS",
-  "Bootstrap",
-  "Vuetify",
-  "Git",
-  "GitHub",
-  "NPM",
-  "Composer",
-  "VS Code",
-  "PyCharm",
-  "Postman",
-  "Svelte",
-  // "React", 
-  // "Next.js",
-  // "Nuxt.js",
-  // "Angular",
-  // "Django",
-  // "Flask",
-  // "Java",
-  // "C#",
-  "PHP",
-  "C"
-]);
+const skillsAndInterestAnimation = ref(null);
 
-const interest = ref(["Cricket",
-  "Reading",
-  "Coding",
-  "Netflix"]);
+const animationEducation = Array.from({ length: FerasatEducation.length }, (_, i) => ref(null));
 
 const colorKeys = [
   "active-green",
@@ -140,6 +76,7 @@ const colorKeys = [
 const getColorName = () => {
   return colorKeys[Math.floor(Math.random() * colorKeys.length)];
 };
+
 onMounted(() => {
   gsap.to(title1.value, {
     duration: 0.6,
@@ -153,40 +90,24 @@ onMounted(() => {
     ease: "none",
     delay: 0.2,
   });
-  gsap.to(serving1.value, {
+  gsap.to(skillsAndInterestAnimation.value, {
     duration: 1,
     opacity: 1,
     display: "block",
     x: 1,
-    delay: 0.5,
-  });
-  gsap.to(serving2.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
-    delay: 0.5,
-  });
-  gsap.to(serving3.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
+    y: 1,
     delay: 0.7,
   });
-  gsap.to(serving4.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
-    delay: 0.7,
-  });
-  gsap.to(serving5.value, {
-    duration: 1,
-    opacity: 1,
-    display: "block",
-    x: 1,
-    delay: 1,
+
+  animationEducation.forEach((anim, index) => {
+    gsap.to(anim.value, {
+      duration: 1,
+      opacity: 1,
+      display: "block",
+      x: 1,
+      y: 1,
+      delay: 0.3 + index * 0.1,
+    });
   });
 });
 </script>
@@ -201,13 +122,34 @@ onMounted(() => {
     border-radius: 20px !important;
   }
 
-  .card {
-    transform: translateX(-1600px);
-    opacity: 1;
-    display: "none";
+  .animation {
+    &-1 {
+      transform: translateX(-500px) translateY(-800px);
+      opacity: 0;
+      display: none;
+    }
 
-    &-left {
-      transform: translateX(1600px);
+    &-2 {
+      transform: translateX(500px) translateY(-800px);
+      opacity: 0;
+      display: none;
+    }
+
+    &-3 {
+      transform: translateX(-600px) translateY(100px);
+      opacity: 0;
+      display: none;
+    }
+
+    &-4 {
+      transform: translateX(-800px) translateY(120px);
+      opacity: 0;
+      display: none;
+    }
+
+    &-skills-interest {
+      transform: translateX(-1100px) translateY(300px);
+      opacity: 0;
       display: "none";
     }
   }

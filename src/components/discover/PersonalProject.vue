@@ -153,5 +153,17 @@ const showProjectImages = (title: string) => {
     opacity: 0;
     display: none;
   }
+
+  &-5 {
+    transform: translateX(-100px) translateY(120px);
+    opacity: 0;
+    display: none;
+  }
+
+  &-6 {
+    transform: translateX(400px) translateY(-120px);
+    opacity: 0;
+    display: none;
+  }
 }
 </style>

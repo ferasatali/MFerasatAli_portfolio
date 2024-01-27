@@ -9,7 +9,7 @@
     <!-- Main heading -->
     <div class="d-flex align-center flex-row flex-wrap">
       <div class="image">
-        <div class="base-card mr-md-4 d-flex align-center flex-column" ref="image">
+        <div class="base-card mr-md-4 d-flex align-center flex-column" ref="image" style="min-height:380px">
           <img src="@/assets/mferasatali.png" alt="ferasat" />
           <p class="header-simple mt-4 text-grey"> {{ experienceYears - 1 }}.7+ Year Experience </p>
         </div>
