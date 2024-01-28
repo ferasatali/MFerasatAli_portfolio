@@ -21,7 +21,7 @@
       </v-col>
       <v-col cols="12" sm="6" class="my-0 py-0 ">
         <div class="form-field">
-          <v-text-field v-model="lastName" class="form-field-input" variant="solo" placeholder="First Name" />
+          <v-text-field v-model="lastName" class="form-field-input" variant="solo" placeholder="Last Name" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="my-0 py-0">
@@ -93,7 +93,7 @@ const contactFerasat = async () => {
       message: message.value,
       phoneNumber: phoneNumber.value,
     };
-    
+
     try {
       await addRowToSheet(spreadsheetId, sheetName, Object.values(values));
     } catch (error) {
