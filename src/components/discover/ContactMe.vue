@@ -53,7 +53,7 @@
 import { ref, onMounted } from "vue";
 import { AppStore } from "@/store/app";
 import gsap from "gsap";
-import { loadSheetsApi,addRowToSheet } from "@/utils/googleSpreadSheetAPI";
+import { loadSheetsApi, addRowToSheet } from "@/utils/googleSpreadSheetAPI";
 
 const store = AppStore();
 const contact = ref(null);
@@ -84,15 +84,21 @@ onMounted(() => {
 
 const contactFerasat = async () => {
   try {
-     const spreadsheetId = '16WUWHMMk0rgzh6Kc9kLIykYQwm9hRpUR07DLQXRWSE4'; // Replace with your actual spreadsheet ID
-      const sheetName = 'Sheet1'; // Replace with your actual sheet name
-      const values = ['Column1Value', 'Column2Value', 'Column3Value']; // Replace with your actual values
-
-      try {
-        await addRowToSheet(spreadsheetId, sheetName, values);
-      } catch (error) {
-        console.error('Error adding row:', error);
-      }
+    const spreadsheetId = '16WUWHMMk0rgzh6Kc9kLIykYQwm9hRpUR07DLQXRWSE4'; // Replace with your actual spreadsheet ID
+    const sheetName = 'Sheet1'; // Replace with your actual sheet name
+    const values = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      message: message.value,
+      phoneNumber: phoneNumber.value,
+    };
+    
+    try {
+      await addRowToSheet(spreadsheetId, sheetName, Object.values(values));
+    } catch (error) {
+      console.error('Error adding row:', error);
+    }
   } catch (error) {
     console.error('Error initializing Sheets API:', error);
   }
