@@ -41,7 +41,7 @@
         </div>
       </v-col>
       <v-col cols="12" class="d-flex align-center justify-end">
-        <v-btn variant="text" class="contact-btn">
+        <v-btn variant="text" class="contact-btn" @click="contactFerasat">
           Submit
         </v-btn>
       </v-col>
@@ -53,8 +53,9 @@
 import { ref, onMounted } from "vue";
 import { AppStore } from "@/store/app";
 import gsap from "gsap";
-const store = AppStore();
+import { loadSheetsApi,addRowToSheet } from "@/utils/googleSpreadSheetAPI";
 
+const store = AppStore();
 const contact = ref(null);
 const contact1 = ref(null);
 
@@ -80,6 +81,22 @@ onMounted(() => {
     x: 1,
   });
 });
+
+const contactFerasat = async () => {
+  try {
+     const spreadsheetId = '16WUWHMMk0rgzh6Kc9kLIykYQwm9hRpUR07DLQXRWSE4'; // Replace with your actual spreadsheet ID
+      const sheetName = 'Sheet1'; // Replace with your actual sheet name
+      const values = ['Column1Value', 'Column2Value', 'Column3Value']; // Replace with your actual values
+
+      try {
+        await addRowToSheet(spreadsheetId, sheetName, values);
+      } catch (error) {
+        console.error('Error adding row:', error);
+      }
+  } catch (error) {
+    console.error('Error initializing Sheets API:', error);
+  }
+};
 </script>
 <style scoped lang="scss">
 .main-heading {
