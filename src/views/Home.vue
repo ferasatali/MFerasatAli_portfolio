@@ -1,17 +1,23 @@
 <template>
   <div class="d-flex align-center justify-center flex-column home">
     <!-- Tagline -->
-    <div class="home-tagline d-flex align-center justify-start py-3 px-4">
+    <div class="home-tagline d-flex align-center justify-start py-1 px-4">
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
-      <p class="base-body-text"> Introduction </p>
+      <p class="base-body-text">Introduction</p>
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
     </div>
     <!-- Main heading -->
     <div class="d-flex align-center flex-row flex-wrap">
       <div class="image">
-        <div class="base-card mr-md-4 d-flex align-center flex-column" ref="image" style="min-height:380px">
+        <div
+          class="base-card mr-md-4 d-flex align-center flex-column"
+          ref="image"
+          style="min-height: 360px"
+        >
           <img src="@/assets/mferasatali.png" alt="ferasat" />
-          <p class="header-simple mt-4 text-grey"> {{ experienceYears - 1 }}.7+ Year Experience </p>
+          <p class="header-simple mt-4 text-grey">
+            {{ experienceYears - 1 }}.7+ Year Experience
+          </p>
         </div>
       </div>
       <div class="mt-5 mt-md-12 text-center home-title">
@@ -20,7 +26,10 @@
       </div>
     </div>
     <!-- Description -->
-    <p ref="description" class="base-body-text mt-5 mt-md-12 home-description text-center text-text"></p>
+    <p
+      ref="description"
+      class="base-body-text mt-5 mt-md-12 home-description text-center text-text"
+    ></p>
   </div>
 </template>
 
@@ -28,12 +37,11 @@
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import moment from 'moment';
-
+import moment from "moment";
 
 gsap.registerPlugin(TextPlugin);
 
-const startDate = moment('2022-01-01');
+const startDate = moment("2022-01-01");
 const currentDate = moment();
 const experienceYears = ref(0);
 
@@ -57,23 +65,23 @@ onMounted(() => {
     duration: 2,
     text: "Muhammad Ferasat Ali",
     ease: "none",
-    delay: 0.3
+    delay: 0.5,
   });
   gsap.to(title2.value, {
-    duration: 2,
+    duration: 1,
     text: "Full Stack Software Engineer",
     ease: "none",
-    delay: 0.1
+    delay: 0.1,
   });
   gsap.to(description.value, {
     duration: 3,
-    text: "A passionate Software Engineer and Web Developer based in Lahore, Pakistan. With expertise in building scalable web applications and acommitment to innovation, I bring a unique blend of technical skills and creativity to drive success in every project. <br /> Explore my journey through code and creativity below. Let's build something amazing together!",
+    text: "A passionate Software Engineer and Web Developer based in Lahore, Pakistan. With expertise in building scalable web applications and acommitment to innovation, I bring a unique blend of technical skills and creativity to drive success in every project. <br /> Explore my journey through code and creativity below. Let's build something amazing together! <br> Unlock more about my journey by clicking the discover button below.",
     ease: "none",
     delay: 1,
   });
 });
 const calculateExperience = () => {
-  experienceYears.value = currentDate.diff(startDate, 'years');
+  experienceYears.value = currentDate.diff(startDate, "years");
 };
 </script>
 
@@ -90,13 +98,17 @@ const calculateExperience = () => {
     gap: 0.5rem;
     border-radius: 5rem;
     border: 2px solid map-get($map: $dark-colors, $key: "border");
-    background: linear-gradient(177.98deg,
+    background: linear-gradient(
+        177.98deg,
         rgba(28, 83, 244, 0.1) -94.88%,
         rgba(6, 3, 27, 0.5) 51.01%,
-        rgba(28, 83, 244, 0.1) 146.6%),
-      linear-gradient(0deg,
+        rgba(28, 83, 244, 0.1) 146.6%
+      ),
+      linear-gradient(
+        0deg,
         map-get($map: $dark-colors, $key: "border"),
-        map-get($map: $dark-colors, $key: "border"));
+        map-get($map: $dark-colors, $key: "border")
+      );
     box-shadow: 0px 4px 40px 0px rgba(103, 39, 236, 0.16);
     line-height: 1rem;
   }
@@ -115,7 +127,7 @@ const calculateExperience = () => {
       -moz-background-clip: text;
       -ms-background-clip: text;
     }
-  } 
+  }
 
   &-description {
     width: 70%;
