@@ -39,7 +39,7 @@
           <div
             class="d-flex align-center flex-row mt-3 base-card base-card-menu"
             style="gap: 0.6rem"
-            v-for="(item,index) in contactMe"
+            v-for="(item,index) in FerasatSocialLinks"
             :key="index"
           >
             <img width="25px" class="social-icons" :src="item.icon" />
@@ -55,7 +55,7 @@
               target="_blank"
             >
             <v-icon class="mr-2"> mdi-download </v-icon>
-              M'F Resume
+             Resume
             </v-btn>
             <v-btn
               variant="text"
@@ -63,14 +63,12 @@
               target="_blank"
             >
             <v-icon class="mr-2"> mdi-download </v-icon>
-              M'F Cover Letter
+              Cover Letter
             </v-btn>
           </div>
         </div>
       </v-menu>
     </div>
-    <!-- <img width="130px" src="@/assets/mfa.png" / -->
-    <!-- <img width="65px" src="@/assets/45.png" class="mr-4" /> -->
   </div>
 </template>
 
@@ -78,40 +76,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 const open = ref(false);
-
-// import NavbarComponent from "./NavbarComponent.vue";
-const contactMe = ref([
-  {
-    name: "GitHub",
-    link: "https://github.com/ferasatali",
-    icon: "/github.png",
-  },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/ali-ferasat-ali-7b1b3b1b0/",
-    icon: "/linkedin-02.png",
-  },
-  {
-    name: "GitHub Aslase",
-    link: "https://github.com/fali-aslase",
-    icon: "/github.png",
-  },
-  {
-    name: "Twitter",
-    link: "https://twitter.com/AliFerasat",
-    icon: "/twitter.png",
-  },
-  {
-    name: "Instagram",
-    link: "https://www.instagram.com/mferasatali/",
-    icon: "/instagram.png",
-  },
-  {
-    name: "Facebook",
-    link: "https://www.facebook.com/mferasatali",
-    icon: "/facebook-01.png",
-  },
-]);
+import { FerasatSocialLinks } from "@/utils/ferasatSocialLinks";
 </script>
 
 <style scoped lang="scss">
