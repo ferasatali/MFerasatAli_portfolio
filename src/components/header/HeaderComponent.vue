@@ -55,7 +55,15 @@
               target="_blank"
             >
             <v-icon class="mr-2"> mdi-download </v-icon>
-              Download Resume
+              M'F Resume
+            </v-btn>
+            <v-btn
+              variant="text"
+              href="https://drive.google.com/file/d/1NKosJ2dj94GCBNEzmjgpjcA82yuKfUsp/view?usp=sharing"
+              target="_blank"
+            >
+            <v-icon class="mr-2"> mdi-download </v-icon>
+              M'F Cover Letter
             </v-btn>
           </div>
         </div>
