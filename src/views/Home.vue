@@ -5,7 +5,7 @@
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
       <p class="base-body-text">Introduction</p>
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
-    </div> 
+    </div>
     <!-- Main heading -->
     <div class="d-flex align-center flex-row flex-wrap">
       <div class="image">
