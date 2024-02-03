@@ -37,10 +37,8 @@
                 'mdi-arrow-up' : 'mdi-arrow-down' }}</v-icon> </v-btn>
           </div>
           <div class="d-flex align-center justify-center base-card mt-3" style="width:100%" v-if="item.selected">
-            <v-carousel show-arrows="hover" height="400">
-              <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover></v-carousel-item>
-              <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
-              <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
+            <v-carousel show-arrows="hover" height="400"  hide-delimiters>
+              <v-carousel-item  v-for="(imag,i) in item.projectImages" :key="i" :src="imag"  ></v-carousel-item>
             </v-carousel>
           </div>
           <v-divider thickness="2" color="blue" class="mt-3" />

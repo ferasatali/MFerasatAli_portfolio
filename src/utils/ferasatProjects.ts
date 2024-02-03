@@ -24,7 +24,22 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-1",
-    projectImages: [""],
+    projectImages: [
+      "../src/assets/images/projectImages/n1.jpg",
+      "../src/assets/images/projectImages/n2.png",
+      "../src/assets/images/projectImages/n3.png",
+      "../src/assets/images/projectImages/nrts.png",
+      "../src/assets/images/projectImages/nrts3.png",
+      "../src/assets/images/projectImages/nrts4.png",
+      "../src/assets/images/projectImages/nrts5.png",
+      "../src/assets/images/projectImages/nrts6.png",
+      "../src/assets/images/projectImages/nrts7.png",
+      "../src/assets/images/projectImages/n4.png",
+      "../src/assets/images/projectImages/n5.png",
+      "../src/assets/images/projectImages/n5.png",
+      "../src/assets/images/projectImages/n6.png",
+      "../src/assets/images/projectImages/n7.png",
+    ],
     selected: false,
   },
   {
@@ -45,7 +60,13 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-2",
-    projectImages: [""],
+    projectImages: [
+      "../src/assets/images/projectImages/s4.png",
+      "../src/assets/images/projectImages/s5.png",
+      "../src/assets/images/projectImages/s2.png",
+      "../src/assets/images/projectImages/s3.png",
+      "../src/assets/images/projectImages/s1.png",
+    ],
     selected: false,
   },
   {
@@ -67,7 +88,15 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-3",
-    projectImages: [""],
+    projectImages: [
+      "../src/assets/images/projectImages/HCMS1.png",
+      "../src/assets/images/projectImages/HCMS2.png",
+      "../src/assets/images/projectImages/HCMS3.png",
+      "../src/assets/images/projectImages/HCMS4.png",
+      "../src/assets/images/projectImages/HCMS5.png",
+      "../src/assets/images/projectImages/HCMS6.png",
+      "../src/assets/images/projectImages/HCMS7.png",
+    ],
     selected: false,
   },
   {
@@ -88,7 +117,12 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-5",
-    projectImages: [""],
+    projectImages: [
+      "../src/assets/images/projectImages/I1.png",
+      "../src/assets/images/projectImages/I2.png",
+      "../src/assets/images/projectImages/I3.png",
+      "../src/assets/images/projectImages/I4.png",
+    ],
     selected: false,
   },
   {
@@ -100,7 +134,7 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       "Technologies: Vue3, TypeScript, Axios, Vuetify, GSAP Animation",
       "Work on Integration of whole landing page structure",
       "Designs and Animations Integration",
-      "Integrate Chat Bot for the HCMS.AI"
+      "Integrate Chat Bot for the HCMS.AI",
     ],
     links: [
       {
@@ -110,7 +144,15 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-6",
-    projectImages: [""],
+    projectImages: [
+      "../src/assets/images/projectImages/LandingPage1.png",
+      "../src/assets/images/projectImages/LandingPage2.png",
+      "../src/assets/images/projectImages/LandingPage3.png",
+      "../src/assets/images/projectImages/LandingPage4.png",
+      "../src/assets/images/projectImages/LandingPage5.png",
+      "../src/assets/images/projectImages/LandingPage6.png",
+      "../src/assets/images/projectImages/LandingPage7.png",
+    ],
     selected: false,
   },
   {
@@ -130,7 +172,13 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-4",
-    projectImages: [""],
+    projectImages: [
+      "../src/assets/images/projectImages/ESE.png",
+      "../src/assets/images/projectImages/ESE1.png",
+      "../src/assets/images/projectImages/ESE2.png",
+      "../src/assets/images/projectImages/ESE3.png",
+      "../src/assets/images/projectImages/ESE4.png",
+    ],
     selected: false,
   },
   {
@@ -150,7 +198,11 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-2",
-    projectImages: [""],
+    projectImages: [
+      "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+      "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
+      "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+    ],
     selected: false,
   },
   {
@@ -171,7 +223,11 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
       },
     ],
     animation: "animation-2",
-    projectImages: [""],
+    projectImages: [
+      "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+      "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
+      "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+    ],
     selected: false,
   },
 ];
