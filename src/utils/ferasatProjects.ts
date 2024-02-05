@@ -181,30 +181,30 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
     ],
     selected: false,
   },
-  {
-    title: "Education Portal",
-    subtitle: "HCMS",
-    date: "07/2023 - Present",
-    content: [
-      "Technologies: Vue2, TypeScript, Axios, Vuetify, PostGre SQL, NodeJs, Express Js",
-      "Implement the design and structure for recruitment process",
-      "Integarte the process of applying for the job and give the test",
-    ],
-    links: [
-      {
-        name: "ESE Portal",
-        color: "leadership-management",
-        url: "https://edu.hcms.ai/auth/dashboard",
-      },
-    ],
-    animation: "animation-2",
-    projectImages: [
-      "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-      "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
-      "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
-    ],
-    selected: false,
-  },
+  // {
+  //   title: "Education Portal",
+  //   subtitle: "HCMS",
+  //   date: "07/2023 - Present",
+  //   content: [
+  //     "Technologies: Vue2, TypeScript, Axios, Vuetify, PostGre SQL, NodeJs, Express Js",
+  //     "Implement the design and structure for recruitment process",
+  //     "Integarte the process of applying for the job and give the test",
+  //   ],
+  //   links: [
+  //     {
+  //       name: "ESE Portal",
+  //       color: "leadership-management",
+  //       url: "https://edu.hcms.ai/auth/dashboard",
+  //     },
+  //   ],
+  //   animation: "animation-2",
+  //   projectImages: [
+  //     "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
+  //     "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
+  //     "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+  //   ],
+  //   selected: false,
+  // },
   {
     title: "Hiring Portal",
     subtitle: "HCMS",
@@ -224,9 +224,10 @@ export const FerasatProjects: IProjects.PersonalProjectsPayload[] = [
     ],
     animation: "animation-2",
     projectImages: [
-      "https://cdn.vuetifyjs.com/images/cards/docks.jpg",
-      "https://cdn.vuetifyjs.com/images/cards/hotel.jpg",
-      "https://cdn.vuetifyjs.com/images/cards/sunshine.jpg",
+      "/projectImages/hiring.png",
+      "/projectImages/hiring1.png",
+      "/projectImages/hiring2.png",
+      "/projectImages/hiring3.png",
     ],
     selected: false,
   },
