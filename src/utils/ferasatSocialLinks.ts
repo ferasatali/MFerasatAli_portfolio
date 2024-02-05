@@ -8,7 +8,7 @@ export const FerasatSocialLinks: ISocialLinks.SocialLinks[] = [
   },
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/ali-ferasat-ali-7b1b3b1b0/",
+    link: "https://www.linkedin.com/in/mferasatali",
     icon: "/linkedin-02.png",
   },
   {
