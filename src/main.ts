@@ -10,7 +10,6 @@ import "@/assets/scss/global.scss";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import { requestInterceptor } from "./interceptor";
-import VueGoogleMaps from "@fawmi/vue-google-maps";
 import router from './router' 
 import moment from 'moment';
 
