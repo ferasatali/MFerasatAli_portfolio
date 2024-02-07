@@ -26,12 +26,6 @@ app.config.globalProperties.$moment = moment;
 
 app.use(VueAxios, axios);
 app.use(router);
-app.use(VueGoogleMaps, {
-  load: {
-    key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-    // language: 'de',
-  },
-});
 app.provide("axios", app.config.globalProperties.axios);
 
 requestInterceptor();
