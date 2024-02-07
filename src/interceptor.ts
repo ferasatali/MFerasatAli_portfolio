@@ -5,7 +5,7 @@ export const requestInterceptor = function (): any {
     async function (config: AxiosRequestConfig) {
       // Append necessary information in headers
       if (config.headers) {
-        config.headers.domain = "https://recruitment.hcms.ai";
+        config.headers.domain = window.location.href;
       }
       return config as InternalAxiosRequestConfig; // Cast here
     },

@@ -1,59 +1,28 @@
-// sheetsService.ts
-const API_KEY = "AIzaSyDV_WQXAcXmiHsjuxkCthtRRMw7h62cgkM";
-const CLIENT_ID =
-  "137890598189-12psfmk7bkgqls4bj2fcmokdh2elmpcu.apps.googleusercontent.com";
-const DISCOVERY_DOCS = [
-  "https://docs.google.com/spreadsheets/d/16WUWHMMk0rgzh6Kc9kLIykYQwm9hRpUR07DLQXRWSE4/edit#gid=0",
-];
-const SCOPES = "https://www.googleapis.com/auth/spreadsheets";
+import axios from "axios";
+
+// const Sheet =
+//   "https://docs.google.com/spreadsheets/d/16WUWHMMk0rgzh6Kc9kLIykYQwm9hRpUR07DLQXRWSE4/edit#gid=0";
 
 export const loadSheetsApi = async () => {
-  return new Promise<void>((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = 'https://apis.google.com/js/api.js';
-    script.onload = () => {
-      gapi.load('client:auth2', () => {
-        gapi.client
-          .init({
-            apiKey: API_KEY,
-            clientId: CLIENT_ID,
-            discoveryDocs: DISCOVERY_DOCS,
-            scope: SCOPES,
-          })
-          .then(() => {
-            resolve();
-          })
-          .catch((error) => {
-            reject(error);
-          });
-      });
-    };
-    document.body.appendChild(script);
-  });
-};
+  const apiUrl = "https://script.google.com/macros/s/AKfycbyhqh9I5yQBRoIouFSfzH1iLh1Hl9P_-O7voHwiGLSApPpDgA_vgh3fxXtBzaAf8VT8Ew/exec"
 
+  const data = {
+    name: "John Doe",
+    email: "ferasatali14@gmail.com",
+    phone: "123-456-7890",
+    message: "Hello, this is a sample message.",
+  };
 
-export const addRowToSheet = async (spreadsheetId: string, sheetName: string, values: string[]) => {
-  try {
-    await loadSheetsApi();
-
-    const sheets = (gapi.client as any).sheets;
-
-    const params = {
-      spreadsheetId,
-      range: `${sheetName}!A:A`,
-      valueInputOption: 'RAW',
-      resource: {
-        values: [values],
+  axios
+    .post(apiUrl, data, {
+      headers: {
+        "Content-Type": "application/json",
       },
-    };
-
-    const response = await sheets.spreadsheets.values.append(params);
-
-    console.log('Row added successfully:', response.result);
-    return response.result;
-  } catch (error) {
-    console.error('Error adding row to sheet:', error);
-    throw error;
-  }
+    })
+    .then((response) => {
+      console.log("Data posted successfully:", response);
+    })
+    .catch((error) => {
+      console.error("Error posting data:", error);
+    });
 };

@@ -53,7 +53,7 @@
 import { ref, onMounted } from "vue";
 import { AppStore } from "@/store/app";
 import gsap from "gsap";
-import { loadSheetsApi, addRowToSheet } from "@/utils/googleSpreadSheetAPI";
+import { loadSheetsApi } from "@/utils/googleSpreadSheetAPI";
 
 const store = AppStore();
 const contact = ref(null);
@@ -95,7 +95,7 @@ const contactFerasat = async () => {
     };
 
     try {
-      await addRowToSheet(spreadsheetId, sheetName, Object.values(values));
+      await loadSheetsApi();
     } catch (error) {
       console.error('Error adding row:', error);
     }
