@@ -46,6 +46,9 @@
         </v-btn>
       </v-col>
     </v-row>
+    <v-snackbar v-model:model-value="snackbar" :timeout="4000" :color="color" variant="tonal" location="top right">
+      {{ snackMessage }}
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -58,12 +61,14 @@ import { loadSheetsApi } from "@/utils/googleSpreadSheetAPI";
 const store = AppStore();
 const contact = ref(null);
 const contact1 = ref(null);
-
+const snackbar = ref(false);
+const snackMessage = ref("Please Fill the form completely.");
 const firstName = ref("");
 const lastName = ref("");
 const email = ref("");
 const message = ref("");
 const phoneNumber = ref("");
+const color = ref("error");
 
 onMounted(() => {
   store.setNavBar("ContactUs");
@@ -83,22 +88,37 @@ onMounted(() => {
 });
 
 const contactFerasat = async () => {
+  if (!firstName.value || !lastName.value || !email.value || !message.value || !phoneNumber.value) {
+    snackbar.value = true;
+    return;
+  }
   try {
     const value = {
-      name: `${firstName.value} ${lastName.value}`,
-      email: email.value,
-      message: message.value,
-      phone: phoneNumber.value,
+      Name: `${firstName.value} ${lastName.value}`,
+      Email: email.value,
+      Message: message.value,
+      Phone: phoneNumber.value,
     };
 
     try {
-      const data = await loadSheetsApi(value);
-      console.log("Data added to sheet:", data);
+      await loadSheetsApi(value);
+      snackbar.value = true;
+      color.value = "success";
+      firstName.value = "";
+      lastName.value = "";
+      email.value = "";
+      message.value = "";
+      phoneNumber.value = "";
+      snackMessage.value = "Detail Submitted Successfully.";
     } catch (error) {
-      console.error('Error adding row:', error);
+      snackbar.value = true;
+      color.value = "error";
+      snackMessage.value = "Error Submitting Details.";
     }
   } catch (error) {
-    console.error('Error initializing Sheets API:', error);
+    snackbar.value = true;
+    color.value = "error";
+    snackMessage.value = "Error Submitting Details.";
   }
 };
 </script>
