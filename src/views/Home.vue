@@ -16,7 +16,7 @@
         >
           <img src="@/assets/mferasatali.png" alt="ferasat" />
           <p class="header-simple mt-4 text-grey">
-            {{ experienceYears - 1 }}.7+ Year Experience
+            {{ `${experienceYears-1}.${experienceMonths}` }}+ Years
           </p>
         </div>
       </div>
@@ -41,9 +41,10 @@ import moment from "moment";
 
 gsap.registerPlugin(TextPlugin);
 
-const startDate = moment("2022-01-01");
+const startDate = moment("2021-02-01");
 const currentDate = moment();
 const experienceYears = ref(0);
+const experienceMonths = ref(0);
 
 const title1 = ref(null);
 const title2 = ref(null);
@@ -81,7 +82,12 @@ onMounted(() => {
   });
 });
 const calculateExperience = () => {
-  experienceYears.value = currentDate.diff(startDate, "years");
+  const years = currentDate.diff(startDate, "years");
+  const startDateWithYears = startDate.clone().add(years, "years");
+  const months = currentDate.diff(startDateWithYears, "months");
+
+  experienceMonths.value = months;
+  experienceYears.value = years;
 };
 </script>
 
