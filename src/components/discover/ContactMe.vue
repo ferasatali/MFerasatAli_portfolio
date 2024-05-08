@@ -41,7 +41,7 @@
         </div>
       </v-col>
       <v-col cols="12" class="d-flex align-center justify-end">
-        <v-btn variant="text" class="contact-btn" @click="contactFerasat">
+        <v-btn variant="text" class="contact-btn" @click="contactFerasat" :loading="loading">
           Submit
         </v-btn>
       </v-col>
@@ -69,8 +69,9 @@ const email = ref("");
 const message = ref("");
 const phoneNumber = ref("");
 const color = ref("error");
+const loading = ref(false);
 
-onMounted(() => {
+onMounted(async () => {
   store.setNavBar("ContactUs");
   gsap.to(contact.value, {
     opacity: 1,
@@ -88,8 +89,10 @@ onMounted(() => {
 });
 
 const contactFerasat = async () => {
+  loading.value = true;
   if (!firstName.value || !lastName.value || !email.value || !message.value || !phoneNumber.value) {
     snackbar.value = true;
+    loading.value = false;
     return;
   }
   try {
@@ -99,7 +102,6 @@ const contactFerasat = async () => {
       Message: message.value,
       Phone: phoneNumber.value,
     };
-
     try {
       await loadSheetsApi(value);
       snackbar.value = true;
@@ -120,6 +122,7 @@ const contactFerasat = async () => {
     color.value = "error";
     snackMessage.value = "Error Submitting Details.";
   }
+  loading.value = false;
 };
 </script>
 <style scoped lang="scss">

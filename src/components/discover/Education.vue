@@ -31,7 +31,8 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="(item, index) in FerasatSkills" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item }}
+            <v-chip v-for="(item, index) in skills" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item
+              }}
             </v-chip>
           </div>
           <div class="d-flex flex-column" style="gap: 0.6rem">
@@ -40,8 +41,9 @@
             </p>
           </div>
           <div>
-            <v-chip v-for="(item, index) in FerasatInterests" :key="index" :class="`ma-2 text-${getColorName()}`"> {{ item
-            }}
+            <v-chip v-for="(item, index) in FerasatInterests" :key="index" :class="`ma-2 text-${getColorName()}`"> {{
+          item
+        }}
             </v-chip>
           </div>
         </div>
@@ -57,11 +59,14 @@ import { TextPlugin } from "gsap/TextPlugin";
 import { FerasatInterests, FerasatSkills, FerasatEducation } from "@/utils/ferasatJourney";
 gsap.registerPlugin(TextPlugin);
 
+import { getSkillsFromSheet } from "@/utils/googleSpreadSheetAPI";
+
 const title1 = ref(null);
 const title2 = ref(null);
 const skillsAndInterestAnimation = ref(null);
 
 const animationEducation = Array.from({ length: FerasatEducation.length }, (_, i) => ref(null));
+const skills = ref<string[]>([]);
 
 const colorKeys = [
   "active-green",
@@ -77,7 +82,7 @@ const getColorName = () => {
   return colorKeys[Math.floor(Math.random() * colorKeys.length)];
 };
 
-onMounted(() => {
+onMounted(async () => {
   gsap.to(title1.value, {
     duration: 0.6,
     text: "Academic Journey",
@@ -98,7 +103,12 @@ onMounted(() => {
     y: 1,
     delay: 0.7,
   });
-
+  const result: any = await getSkillsFromSheet();
+  
+  if (result && result.length > 0) {
+    skills.value = result;
+  } else
+    skills.value = FerasatSkills;
   animationEducation.forEach((anim, index) => {
     gsap.to(anim.value, {
       duration: 1,
