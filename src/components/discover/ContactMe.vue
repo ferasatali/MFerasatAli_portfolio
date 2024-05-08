@@ -84,18 +84,16 @@ onMounted(() => {
 
 const contactFerasat = async () => {
   try {
-    const spreadsheetId = '16WUWHMMk0rgzh6Kc9kLIykYQwm9hRpUR07DLQXRWSE4'; // Replace with your actual spreadsheet ID
-    const sheetName = 'Sheet1'; // Replace with your actual sheet name
-    const values = {
-      firstName: firstName.value,
-      lastName: lastName.value,
+    const value = {
+      name: `${firstName.value} ${lastName.value}`,
       email: email.value,
       message: message.value,
-      phoneNumber: phoneNumber.value,
+      phone: phoneNumber.value,
     };
 
     try {
-      await loadSheetsApi();
+      const data = await loadSheetsApi(value);
+      console.log("Data added to sheet:", data);
     } catch (error) {
       console.error('Error adding row:', error);
     }

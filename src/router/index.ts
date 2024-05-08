@@ -1,35 +1,35 @@
 // Composables
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    component: () => import('@/layouts/default/Default.vue'),
-    redirect: '/home',
+    path: "/",
+    component: () => import("@/layouts/default/Default.vue"),
+    redirect: "/home",
     children: [
       {
-        path: '/home',
-        name: 'Home',
-        component: () => import('@/views/Home.vue'),
+        path: "/home",
+        name: "Home",
+        component: () => import("@/views/Home.vue"),
       },
     ],
   },
   {
-    path: '/discover',
-    component: () => import('@/layouts/discover/discover.vue'),
+    path: "/discover",
+    component: () => import("@/layouts/discover/discover.vue"),
     children: [
       {
-        path: '',
-        name: 'discover',
-        component: () => import('@/views/discover.vue'),
+        path: "",
+        name: "discover",
+        component: () => import("@/views/discover.vue"),
       },
     ],
   },
-]
+];
 
 const router = createRouter({
-  history: createWebHashHistory('/'),
+  history: createWebHistory("/"),
   routes,
-})
+});
 
-export default router
+export default router;
