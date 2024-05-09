@@ -8,7 +8,7 @@
       <v-col cols="12" class="d-flex align-center justify-center flex-wrap mt-6" style="gap: 2rem">
         <div class="d-flex base-card flex-column animation-div" ref="workExperienceAnimation">
           <p class="header-simple">Details</p>
-          <div v-for="(experience, index) in FerasatExperience" :key="index">
+          <div v-for="(experience, index) in experienceDetail" :key="index">
             <p class="main-heading1 mt-3">
               {{ index + 1 }} - {{ experience.companyName }}
               <span class="sub-heading1"> - {{ experience.role }} </span>
@@ -33,15 +33,24 @@ import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { FerasatExperience } from "@/utils/ferasatExperiences";
-import exp from "constants";
+import { getExperienceFromSheet } from "@/utils/googleSpreadSheetAPI";
+import { IExperience } from "@/interfaces";
+
 
 gsap.registerPlugin(TextPlugin);
 
 const title1 = ref(null);
 const title2 = ref(null);
 const workExperienceAnimation = ref(null);
+const experienceDetail = ref<IExperience.ExperiencePayload[]>([]);
 
-onMounted(() => {
+onMounted(async () => {
+  const experience = await getExperienceFromSheet();
+  if (experience && experience.length) {
+    experienceDetail.value = experience;
+  }
+  else
+    experienceDetail.value = FerasatExperience;
   gsap.to(title1.value, {
     duration: 0.6,
     text: "Professional Experience",
@@ -68,6 +77,7 @@ onMounted(() => {
   background: #0a0b21 !important;
   box-shadow: 0 6px 32px rgba(44, 50, 169, 0.04) !important;
   border-radius: 20px !important;
+
   @media (min-width: 1100px) {
     width: 70%;
   }

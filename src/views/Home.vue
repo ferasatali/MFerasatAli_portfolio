@@ -39,6 +39,7 @@ import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import moment from "moment";
 
+
 gsap.registerPlugin(TextPlugin);
 
 const startDate = moment("2021-02-01");
@@ -53,7 +54,6 @@ const image = ref(null);
 
 onMounted(() => {
   calculateExperience();
-
   gsap.to(image.value, {
     duration: 1,
     display: "block",
