@@ -9,7 +9,7 @@ import axios from "axios";
 // const axios: any = inject("axios");
 
 export const AppStore = defineStore("app", () => {
-  const exploreCurrentTab = ref(1);
+  const exploreCurrentTab = ref(0);
   const navBar = ref("Home");
 
   function setNavBar(title: string) {

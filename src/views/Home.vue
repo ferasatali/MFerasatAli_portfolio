@@ -3,7 +3,7 @@
     <!-- Tagline -->
     <div class="home-tagline d-flex align-center justify-start py-1 px-4">
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
-      <p class="base-body-text">Introduction</p>
+      <p class="">profileIntroduction('MFA');</p>
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
     </div>
     <!-- Main heading -->
@@ -16,7 +16,7 @@
         >
           <img src="@/assets/mferasatali.png" alt="ferasat" />
           <p class="header-simple mt-4 text-grey">
-            {{ `${experienceYears-1}.${experienceMonths}` }}+ Years
+            {{ `${experienceYears - 1}.${experienceMonths}` }}+ Years
           </p>
         </div>
       </div>
@@ -28,7 +28,7 @@
     <!-- Description -->
     <p
       ref="description"
-      class="base-body-text mt-5 mt-md-12 home-description text-center text-text"
+      class="base-body-text mt-2 home-description text-center text-text"
     ></p>
   </div>
 </template>
@@ -38,7 +38,7 @@ import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import moment from "moment";
-
+import { getIntroduction } from "@/utils/googleSpreadSheetAPI";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -51,8 +51,15 @@ const title1 = ref(null);
 const title2 = ref(null);
 const description = ref(null);
 const image = ref(null);
+const introduction = ref(
+  "Welcome();! <br> I'm a passionate Software Engineer and Web Developer based in Lahore, Pakistan. <br> With expertise in building scalable web applications and a commitment to innovation, <br> I bring a unique blend of technical skills and creativity to drive success in every project. <br> Explore my journey through code and creativity below. <br> Let's build something amazing together! <br> Unlock more about my journey by clicking the button on right side."
+);
 
-onMounted(() => {
+onMounted(async () => {
+  const intro = await getIntroduction();
+  if (intro) {
+    introduction.value = intro;
+  }
   calculateExperience();
   gsap.to(image.value, {
     duration: 1,
@@ -76,7 +83,7 @@ onMounted(() => {
   });
   gsap.to(description.value, {
     duration: 3,
-    text: "A passionate Software Engineer and Web Developer based in Lahore, Pakistan. With expertise in building scalable web applications and acommitment to innovation, I bring a unique blend of technical skills and creativity to drive success in every project. <br /> Explore my journey through code and creativity below. Let's build something amazing together! <br> Unlock more about my journey by clicking the discover button below.",
+    text: introduction.value,
     ease: "none",
     delay: 1,
   });

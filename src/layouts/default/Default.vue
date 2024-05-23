@@ -6,9 +6,8 @@
     </div>
     <div class="mt-auto d-flex align-center justify-center pt-7">
       <v-btn variant="text" class="btn-explore" to="/discover">
-        Discover
         <template v-slot:prepend>
-          <img src="@/assets/icons/linear/menu.svg" />
+          <img src="@/assets/icons/linear/menu.svg" class="ml-2" />
         </template>
       </v-btn>
     </div>
@@ -31,16 +30,21 @@ import DefaultView from "./View.vue";
 
 .btn-explore {
   position: fixed;
-  bottom: 0;
+  right: 0%;
+  top: 50%;
+  bottom: 50%;
   border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
   border-radius: 0.8rem !important;
-  background: linear-gradient(180deg,
+  background: linear-gradient(
+      180deg,
       rgba(28, 83, 244, 0.1) -52.63%,
       rgba(3, 0, 22, 0.54) 51.46%,
-      rgba(28, 83, 244, 0.1) 142.11%),
-    linear-gradient(0deg,
+      rgba(28, 83, 244, 0.1) 142.11%
+    ),
+    linear-gradient(
+      0deg,
       map-get($map: $dark-colors, $key: "border"),
-      map-get($map: $dark-colors, $key: "border")) !important;
-
+      map-get($map: $dark-colors, $key: "border")
+    ) !important;
 }
 </style>
