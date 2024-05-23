@@ -30,17 +30,11 @@ import { useRouter } from "vue-router";
 import { onBeforeMount, onUnmounted, onBeforeUnmount } from "vue";
 
 const router = useRouter();
+
 onBeforeMount(() => {
   if (localStorage.getItem("page") == "discover") {
     router.push("/discover");
   }
-});
-
-onUnmounted(() => {
-  localStorage.setItem("page", "home");
-});
-onBeforeUnmount(() => {
-  localStorage.setItem("page", "home");
 });
 
 const viewDetails = () => {
