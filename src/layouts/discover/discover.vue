@@ -94,9 +94,9 @@ const close = async () => {
   sessionStorage.removeItem("page");
   await gsap.to(animation.value, {
     opacity: 1,
-    delay: 0.6,
-    x: "1000px",
-    y: "-500px",
+    delay: 0.6, 
+    x: "-800px",
+    y: "-800px",
   });
   router.back();
 };
@@ -119,7 +119,7 @@ const close = async () => {
 
 .btn-explore {
   position: fixed;
-  right: 7px;
+  left: 7px;
   top: 7px;
   border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
   border-radius: 0.8rem !important;
