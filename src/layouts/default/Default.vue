@@ -10,7 +10,7 @@
           <v-btn
             variant="text"
             class="btn-explore"
-            to="/discover"
+            @click="viewDetails"
             v-bind="props"
           >
             <template v-slot:prepend>
@@ -26,6 +26,20 @@
 <script lang="ts" setup>
 import HeaderComponent from "@/components/header/HeaderComponent.vue";
 import DefaultView from "./View.vue";
+import { useRouter } from "vue-router";
+import { onBeforeMount } from "vue";
+
+const router = useRouter();
+onBeforeMount(() => {
+  if (localStorage.getItem("page") == "discover") {
+    router.push("/discover");
+  }
+});
+
+const viewDetails = () => {
+  localStorage.setItem("page", "discover");
+  router.push("/discover");
+};
 </script>
 
 <style scoped lang="scss">

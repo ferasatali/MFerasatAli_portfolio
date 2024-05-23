@@ -90,6 +90,7 @@ const setTab = (newTab: unknown) => {
   store.setExploreCurrentTab(newTab as number);
 };
 const close = async () => {
+  localStorage.removeItem("page");
   await gsap.to(animation.value, {
     opacity: 1,
     delay: 0.6,
