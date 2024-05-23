@@ -47,10 +47,10 @@ const experienceDetail = ref<IExperience.ExperiencePayload[]>([]);
 onMounted(async () => {
   const experience = await getExperienceFromSheet();
   if (experience && experience.length) {
-    experienceDetail.value = experience;
+    experienceDetail.value = experience.reverse();
   }
   else
-    experienceDetail.value = FerasatExperience;
+    experienceDetail.value = FerasatExperience.reverse();
   gsap.to(title1.value, {
     duration: 0.6,
     text: "Professional Experience",
