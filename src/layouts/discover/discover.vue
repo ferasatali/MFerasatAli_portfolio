@@ -75,6 +75,7 @@ onMounted(() => {
     opacity: 1,
     display: "block",
     x: 1,
+    y: 1,
   });
 
   sessionStorage.getItem("exploreCurrentTab")
@@ -94,7 +95,8 @@ const close = async () => {
   await gsap.to(animation.value, {
     opacity: 1,
     delay: 0.6,
-    x: "-2000px",
+    x: "1000px",
+    y: "-500px",
   });
   router.back();
 };
@@ -117,9 +119,8 @@ const close = async () => {
 
 .btn-explore {
   position: fixed;
-  left: 0%;
-  top: 50%;
-  bottom: 50%;
+  right: 7px;
+  top: 7px;
   border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
   border-radius: 0.8rem !important;
   background: linear-gradient(
