@@ -32,13 +32,13 @@ import { onBeforeMount, onUnmounted, onBeforeUnmount } from "vue";
 const router = useRouter();
 
 onBeforeMount(() => {
-  if (localStorage.getItem("page") == "discover") {
+  if (sessionStorage.getItem("page") == "discover") {
     router.push("/discover");
   }
 });
 
 const viewDetails = () => {
-  localStorage.setItem("page", "discover");
+  sessionStorage.setItem("page", "discover");
   router.push("/discover");
 };
 </script>

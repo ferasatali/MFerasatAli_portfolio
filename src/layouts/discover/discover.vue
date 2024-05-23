@@ -77,20 +77,20 @@ onMounted(() => {
     x: 1,
   });
 
-  localStorage.getItem("exploreCurrentTab")
+  sessionStorage.getItem("exploreCurrentTab")
     ? store.setExploreCurrentTab(
-        Number(localStorage.getItem("exploreCurrentTab"))
+        Number(sessionStorage.getItem("exploreCurrentTab"))
       )
     : store.setExploreCurrentTab(1);
   tab.value = store.exploreCurrentTab;
 });
 
 const setTab = (newTab: unknown) => {
-  localStorage.setItem("exploreCurrentTab", newTab as string);
+  sessionStorage.setItem("exploreCurrentTab", newTab as string);
   store.setExploreCurrentTab(newTab as number);
 };
 const close = async () => {
-  localStorage.removeItem("page");
+  sessionStorage.removeItem("page");
   await gsap.to(animation.value, {
     opacity: 1,
     delay: 0.6,
