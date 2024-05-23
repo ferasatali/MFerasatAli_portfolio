@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div ref="animation" class="animation">
-      <div class="mt-4">
+      <div class="mt-md-4 mt-8">
         <v-tabs
           v-model="tab"
           color="deep-white-accent-4"
