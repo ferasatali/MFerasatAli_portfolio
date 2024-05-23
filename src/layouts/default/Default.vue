@@ -5,7 +5,7 @@
       <DefaultView />
     </div>
     <div class="mt-auto d-flex align-center justify-center pt-7">
-      <v-tooltip text="View Details" location="start,end" theme="red" activator="parent">
+      <v-tooltip text="View Details"   location="top" theme="red" activator="parent">
         <template v-slot:activator="{ props }">
           <v-btn
             variant="text"

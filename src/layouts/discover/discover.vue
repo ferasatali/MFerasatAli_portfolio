@@ -38,7 +38,7 @@
         class="px-10 mb-6 align-center justify-space-between"
       >
         <v-col cols="12" class="d-flex align-center justify-center mt-0 pt-0">
-          <v-tooltip text="Close" location="end" theme="primary" >
+          <v-tooltip text="Close" location="bottom" theme="primary" >
             <template v-slot:activator="{ props }">
               <v-btn
                 variant="text"
@@ -119,8 +119,6 @@ const close = async () => {
 
 .btn-explore {
   position: fixed;
-  left: 50%;
-  right: 50%;
   bottom: 2px;
   border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
   border-radius: 0.8rem !important;
