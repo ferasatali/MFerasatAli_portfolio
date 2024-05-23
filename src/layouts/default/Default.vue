@@ -5,7 +5,7 @@
       <DefaultView />
     </div>
     <div class="mt-auto d-flex align-center justify-center pt-7">
-      <v-tooltip text="Profile" location="start" theme="red" activator="parent">
+      <v-tooltip text="View Details" location="start,end" theme="red" activator="parent">
         <template v-slot:activator="{ props }">
           <v-btn
             variant="text"
@@ -53,10 +53,8 @@ const viewDetails = () => {
 }
 
 .btn-explore {
-  position: fixed;
-  right: 0%;
-  top: 50%;
-  bottom: 50%;
+  position: sticky;
+  top: 9px;
   border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
   border-radius: 0.8rem !important;
   background: linear-gradient(

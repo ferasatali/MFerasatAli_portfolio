@@ -95,8 +95,8 @@ const close = async () => {
   await gsap.to(animation.value, {
     opacity: 1,
     delay: 0.6, 
-    x: "-800px",
-    y: "-800px",
+    x: "1px",
+    y: "800px",
   });
   router.back();
 };
@@ -119,8 +119,9 @@ const close = async () => {
 
 .btn-explore {
   position: fixed;
-  left: 7px;
-  top: 7px;
+  left: 50%;
+  right: 50%;
+  bottom: 2px;
   border: 2px solid map-get($map: $dark-colors, $key: "border") !important;
   border-radius: 0.8rem !important;
   background: linear-gradient(
