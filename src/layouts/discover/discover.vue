@@ -38,9 +38,18 @@
         class="px-10 mb-6 align-center justify-space-between"
       >
         <v-col cols="12" class="d-flex align-center justify-center mt-0 pt-0">
-          <v-btn variant="text" class="btn-explore" @click="close">
-            <v-icon> mdi-close</v-icon>
-          </v-btn>
+          <v-tooltip text="Close" location="end" theme="primary" >
+            <template v-slot:activator="{ props }">
+              <v-btn
+                variant="text"
+                class="btn-explore"
+                @click="close"
+                v-bind="props"
+              >
+                <v-icon> mdi-close</v-icon>
+              </v-btn>
+            </template>
+          </v-tooltip>
         </v-col>
       </v-row>
     </div>

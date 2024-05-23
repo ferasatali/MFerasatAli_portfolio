@@ -5,11 +5,20 @@
       <DefaultView />
     </div>
     <div class="mt-auto d-flex align-center justify-center pt-7">
-      <v-btn variant="text" class="btn-explore" to="/discover">
-        <template v-slot:prepend>
-          <img src="@/assets/icons/linear/menu.svg" class="ml-2" />
+      <v-tooltip text="Profile" location="start" theme="red" activator="parent">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            variant="text"
+            class="btn-explore"
+            to="/discover"
+            v-bind="props"
+          >
+            <template v-slot:prepend>
+              <img src="@/assets/icons/linear/menu.svg" class="ml-2" />
+            </template>
+          </v-btn>
         </template>
-      </v-btn>
+      </v-tooltip>
     </div>
   </v-app>
 </template>
