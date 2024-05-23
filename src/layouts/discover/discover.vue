@@ -12,7 +12,6 @@
             >Journey
             <img src="@/assets/icons/linear/augur-(rep).svg" class="pl-7" />
           </v-tab>
-
           <v-tab :value="2"
             >Experience
             <img src="@/assets/icons/linear/dent-(dent).svg" class="pl-7" />
