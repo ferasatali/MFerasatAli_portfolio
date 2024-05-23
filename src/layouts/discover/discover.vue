@@ -16,7 +16,6 @@
             >Experience
             <img src="@/assets/icons/linear/dent-(dent).svg" class="pl-7" />
           </v-tab>
-
           <v-tab :value="3"
             >Projects
             <img src="@/assets/icons/linear/civic-(cvc).svg" class="pl-7" />
@@ -37,7 +36,7 @@
         class="px-10 mb-6 align-center justify-space-between"
       >
         <v-col cols="12" class="d-flex align-center justify-center mt-0 pt-0">
-          <v-tooltip text="Close" location="bottom" theme="primary" >
+          <v-tooltip text="Close" location="bottom" theme="primary">
             <template v-slot:activator="{ props }">
               <v-btn
                 variant="text"
@@ -93,7 +92,7 @@ const close = async () => {
   sessionStorage.removeItem("page");
   await gsap.to(animation.value, {
     opacity: 1,
-    delay: 0.6, 
+    delay: 0.6,
     x: "1px",
     y: "800px",
   });
