@@ -3,7 +3,6 @@
     <v-navigation-drawer
       class="nav"
       v-model="appBar"
-      :location="$vuetify.display.mobile ? 'bottom' : undefined"
       temporary
     >
       <RouterLink to="/" class="d-flex align-center justify-center">
