@@ -1,15 +1,17 @@
 <template>
   <v-layout>
-    <v-navigation-drawer
-      class="nav"
-      v-model="appBar"
-      temporary
-    >
+    <v-navigation-drawer class="nav" v-model="appBar" temporary>
       <RouterLink to="/" class="d-flex align-center justify-center">
         <img width="100px" src="@/assets/mfa-logo.png" class="mr-4" />
       </RouterLink>
       <v-list class="d-flex align-start flex-column mt-16" style="gap: 1rem">
-        <v-list-item to="/home" class="mx-6" color="white" variant="plain">
+        <v-list-item
+          to="/home"
+          class="mx-6"
+          color="white"
+          variant="plain"
+          @click="setTab('/home')"
+        >
           <template v-slot:default>
             <div class="d-flex align-center">
               <img
@@ -26,7 +28,13 @@
             </div>
           </template></v-list-item
         >
-        <v-list-item to="/education" class="mx-6" color="white" variant="plain">
+        <v-list-item
+          to="/education"
+          class="mx-6"
+          color="white"
+          variant="plain"
+          @click="setTab('/education')"
+        >
           <template v-slot:default>
             <div class="d-flex align-center">
               <img
@@ -48,6 +56,7 @@
           class="mx-6"
           color="white"
           variant="plain"
+          @click="setTab('/work-experience')"
         >
           <template v-slot:default>
             <div class="d-flex align-center">
@@ -70,6 +79,7 @@
           class="mx-6"
           color="white"
           variant="plain"
+          @click="setTab('/personal-project')"
         >
           <template v-slot:default>
             <div class="d-flex align-center">
@@ -92,6 +102,7 @@
           class="mx-6"
           color="white"
           variant="plain"
+          @click="setTab('/contact-me')"
         >
           <template v-slot:default>
             <div class="d-flex align-center">
@@ -132,11 +143,24 @@
 
 <script setup lang="ts">
 import HeaderComponent from "@/components/header/HeaderComponent.vue";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+onMounted(() => {
+  if (sessionStorage.getItem("route")) {
+    const route = sessionStorage.getItem("route");
+    if (route) router.push(route);
+    else router.push("/home");
+  }
+});
 
 const appBar = ref(true);
 const route = useRoute();
+const setTab = (tab: number) => {
+  sessionStorage.setItem("route", tab.toString());
+};
 </script>
 
 <style scoped lang="scss">
