@@ -1,11 +1,18 @@
 <template>
   <v-app>
-    <div class="app-container">
-      <HeaderComponent />
+    <div
+      class="app-container"
+      :class="path.path == '/home' ? 'image' : ''"
+    >
       <DefaultView />
     </div>
-    <div class="mt-auto d-flex align-center justify-center pt-7">
-      <v-tooltip text="View Details"   location="top" theme="red" activator="parent">
+    <div class="mt-auto d-flex align-center justify-center pt-7" v-if="false">
+      <v-tooltip
+        text="View Details"
+        location="top"
+        theme="red"
+        activator="parent"
+      >
         <template v-slot:activator="{ props }">
           <v-btn
             variant="text"
@@ -27,10 +34,11 @@
 import HeaderComponent from "@/components/header/HeaderComponent.vue";
 import DefaultView from "./View.vue";
 import { useRouter } from "vue-router";
-import { onBeforeMount, onUnmounted, onBeforeUnmount } from "vue";
+import { onBeforeMount, computed } from "vue";
+import { useRoute } from "vue-router";
 
 const router = useRouter();
-
+const route = useRoute();
 onBeforeMount(() => {
   if (sessionStorage.getItem("page") == "discover") {
     router.push("/discover");
@@ -41,17 +49,20 @@ const viewDetails = () => {
   sessionStorage.setItem("page", "discover");
   router.push("/discover");
 };
+
+const path = computed(() => route);
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/scss/variables.scss"; // Import your variable styles
 
 .app-container {
-  background: url("@/assets/images/Ellipse 1.png") center/cover no-repeat;
   min-height: 100vh;
   position: relative;
 }
-
+.image {
+  background: url("@/assets/images/Ellipse 1.png") center/cover no-repeat;
+}
 .btn-explore {
   position: sticky;
   top: 9px;

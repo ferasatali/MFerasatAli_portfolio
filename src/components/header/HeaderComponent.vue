@@ -1,74 +1,68 @@
 <template>
-  <div class="d-flex align-center justify-space-between flex-wrap pa-4">
-    <RouterLink to="/">
-      <img width="100px" src="@/assets/mfa-logo.png" class="mr-4" />
-    </RouterLink>
-    <v-spacer />
-    <div>
-      <v-menu
-        location="left"
-        :close-on-content-click="false"
-        v-model:model-value="open"
-      >
-        <template v-slot:activator="{ props }">
-          <v-btn
-            class="text-capitalize free-trail-btn"
-            height="45px"
-            v-bind="props"
-          >
-            Connect With Ferasat
-          </v-btn>
-        </template>
-        <div class="d-flex flex-column base-card base-card-card ml-4">
-          <div class="d-flex align-center justify-center">
-            <p class="header">Contact & Social Links</p>
+  <div class="d-flex align-center justify-end pa-4">
+    <v-menu
+      location="left"
+      :close-on-content-click="false"
+      v-model:model-value="open"
+    >
+      <template v-slot:activator="{ props }">
+        <v-btn
+          class="text-capitalize free-trail-btn"
+          height="45px"
+          v-bind="props"
+        >
+          Connect With Ferasat
+        </v-btn>
+      </template>
+      <div class="d-flex flex-column base-card base-card-card ml-4">
+        <div class="d-flex align-center justify-center">
+          <p class="header">Contact & Social Links</p>
+        </div>
+        <div
+          class="d-flex flex-column mt-2 base-card base-card-menu"
+          style="gap: 0.6rem"
+        >
+          <div class="d-flex align-center" style="gap: 0.6rem">
+            <v-icon> mdi-email </v-icon>
+            <p>ferasatali14@gmail.com</p>
           </div>
-          <div
-            class="d-flex flex-column mt-2 base-card base-card-menu"
-            style="gap: 0.6rem"
-          >
-            <div class="d-flex align-center" style="gap: 0.6rem">
-              <v-icon> mdi-email </v-icon>
-              <p>ferasatali14@gmail.com</p>
-            </div>
-            <div class="d-flex align-center" style="gap: 0.6rem">
-              <v-icon> mdi-phone </v-icon>
-              <p>03424658936</p>
-            </div>
-          </div>
-          <div
-            class="d-flex align-center flex-row mt-3 base-card base-card-menu"
-            style="gap: 0.6rem"
-            v-for="(item,index) in FerasatSocialLinks"
-            :key="index"
-          >
-            <img width="25px" class="social-icons" :src="item.icon" />
-            <p>
-              {{ item.name }} :
-              <a :href="item.link" target="_blank"> MFerasatAli</a>
-            </p>
-          </div>
-          <div class="d-flex flex-column mt-2 base-card base-card-menu">
-            <v-btn
-              variant="text"
-              href="https://drive.google.com/file/d/1NKosJ2dj94GCBNEzmjgpjcA82yuKfUsp/view?usp=sharing"
-              target="_blank"
-            >
-            <v-icon class="mr-2"> mdi-download </v-icon>
-             Resume
-            </v-btn>
-            <v-btn
-              variant="text"
-              href="https://drive.google.com/file/d/18a37mXxFUQZzhxqfwQeBEKYo-eIKSacu/view?usp=sharing"
-              target="_blank"
-            >
-            <v-icon class="mr-2"> mdi-download </v-icon>
-              Cover Letter
-            </v-btn>
+          <div class="d-flex align-center" style="gap: 0.6rem">
+            <v-icon> mdi-phone </v-icon>
+            <p>03424658936</p>
           </div>
         </div>
-      </v-menu>
-    </div>
+        <div
+          class="d-flex align-center flex-row mt-3 base-card base-card-menu"
+          style="gap: 0.6rem"
+          v-for="(item, index) in FerasatSocialLinks"
+          :key="index"
+        >
+          <img width="25px" class="social-icons" :src="item.icon" />
+          <p>
+            {{ item.name }} :
+            <a :href="item.link" target="_blank"> MFerasatAli</a>
+          </p>
+        </div>
+        <div class="d-flex flex-column mt-2 base-card base-card-menu">
+          <v-btn
+            variant="text"
+            href="https://drive.google.com/file/d/1NKosJ2dj94GCBNEzmjgpjcA82yuKfUsp/view?usp=sharing"
+            target="_blank"
+          >
+            <v-icon class="mr-2"> mdi-download </v-icon>
+            Resume
+          </v-btn>
+          <v-btn
+            variant="text"
+            href="https://drive.google.com/file/d/18a37mXxFUQZzhxqfwQeBEKYo-eIKSacu/view?usp=sharing"
+            target="_blank"
+          >
+            <v-icon class="mr-2"> mdi-download </v-icon>
+            Cover Letter
+          </v-btn>
+        </div>
+      </div>
+    </v-menu>
   </div>
 </template>
 

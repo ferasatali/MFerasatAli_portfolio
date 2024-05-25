@@ -30,7 +30,7 @@
         <router-view />
       </div>
     </div>
-    <div class="mt-auto">
+    <div class="mt-auto" v-show="false">
       <v-row
         align="center"
         class="px-10 mb-6 align-center justify-space-between"
