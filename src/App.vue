@@ -158,7 +158,7 @@ onMounted(() => {
 
 const appBar = ref(true);
 const route = useRoute();
-const setTab = (tab: number) => {
+const setTab = (tab: string) => {
   sessionStorage.setItem("route", tab.toString());
 };
 </script>
