@@ -170,7 +170,7 @@ const contactFerasat = async () => {
 </script>
 <style scoped lang="scss">
 #contact-me {
-  padding: 3.5rem 3rem 4rem 8rem;
+  padding: 2rem;
   .main-heading {
     font-size: 43px;
     color: rgba(28, 176, 244, 0.619) !important;
