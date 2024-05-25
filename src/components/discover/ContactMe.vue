@@ -1,5 +1,5 @@
 <template>
-  <v-container id="contact-me">
+  <section id="contact-me">
     <v-row align="center">
       <v-col cols="12" class="px-2 px-md-5">
         <div ref="contact" class="contact">
@@ -86,7 +86,7 @@
     >
       {{ snackMessage }}
     </v-snackbar>
-  </v-container>
+  </section>
 </template>
 
 <script setup lang="ts">
