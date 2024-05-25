@@ -1,6 +1,6 @@
 <template>
-  <section id="contact-me">
-    <v-row align="center">
+  <section id="contact-me" class="pa-md-14 pa-5">
+    <v-row align="center mt-16">
       <v-col cols="12" class="px-2 px-md-5">
         <div ref="contact" class="contact">
           <p class="main-heading">Contact Me</p>
@@ -13,7 +13,7 @@
         </div>
       </v-col>
     </v-row>
-    <v-row align="center" class="px-2 px-md-5 mt-4">
+    <v-row align="center" justify="center" class="mt-5">
       <v-col cols="12" sm="6" class="my-0 py-0">
         <div class="form-field">
           <v-text-field
@@ -83,6 +83,7 @@
       :color="color"
       variant="tonal"
       location="top right"
+      class="mt-16"
     >
       {{ snackMessage }}
     </v-snackbar>
