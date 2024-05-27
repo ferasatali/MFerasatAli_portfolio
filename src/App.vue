@@ -1,6 +1,10 @@
 <template>
   <v-layout>
-    <v-navigation-drawer class="nav" v-model="appBar" temporary>
+    <v-navigation-drawer
+      class="nav"
+      v-model="appBar"
+      :temporary="vuetify.display.mdAndUp ? false : true"
+    >
       <RouterLink to="/" class="d-flex align-center justify-center">
         <img width="100px" src="@/assets/mfa-logo.png" class="mr-4" />
       </RouterLink>
