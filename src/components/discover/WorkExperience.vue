@@ -95,8 +95,7 @@ onMounted(async () => {
     console.error(e);
     loadingExperience.value = false;
   }
-    loadingExperience.value = false;
-
+  loadingExperience.value = false;
 });
 </script>
 <style lang="scss" scoped>
