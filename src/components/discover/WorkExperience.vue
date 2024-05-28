@@ -1,27 +1,48 @@
 <template>
   <section>
     <v-row align="center" justify="center">
-      <v-col cols="12" class="d-flex align-center justify-center flex-column mt-8">
+      <v-col
+        cols="12"
+        class="d-flex align-center justify-center flex-column mt-8"
+      >
         <p class="main-heading" ref="title1"></p>
         <p class="paragraph" ref="title2"></p>
       </v-col>
-      <v-col cols="12" class="d-flex align-center justify-center flex-wrap mt-6" style="gap: 2rem">
-        <div class="d-flex base-card flex-column animation-div" ref="workExperienceAnimation">
+      <v-col
+        cols="12"
+        class="d-flex align-center justify-center flex-wrap mt-6"
+        style="gap: 2rem"
+      >
+        <div
+          class="d-flex base-card flex-column animation-div"
+          ref="workExperienceAnimation"
+        >
           <p class="header-simple">Details</p>
-          <div v-for="(experience, index) in experienceDetail" :key="index">
-            <p class="main-heading1 mt-3">
-              {{ index + 1 }} - {{ experience.companyName }}
-              <span class="sub-heading1"> - {{ experience.role }} </span>
-              <span class="sub-heading1 ml-2 d-flex justify-end">
-                {{ experience.duration }}
-              </span>
-            </p>
-            <div class="px-3">
-              <ul v-for="(data, ind) in experience.content" :key="ind">
-                <li>{{ data }}</li>
-              </ul>
+          <span v-if="!loadingExperience">
+            <div v-for="(experience, index) in experienceDetail" :key="index">
+              <p class="main-heading1 mt-3">
+                {{ index + 1 }} - {{ experience.companyName }}
+                <span class="sub-heading1"> - {{ experience.role }} </span>
+                <span class="sub-heading1 ml-2 d-flex justify-end">
+                  {{ experience.duration }}
+                </span>
+              </p>
+              <div class="px-3">
+                <ul v-for="(data, ind) in experience.content" :key="ind">
+                  <li>{{ data }}</li>
+                </ul>
+              </div>
+              <v-divider thickness="2" color="blue" class="mt-3" />
             </div>
-            <v-divider thickness="2" color="blue" class="mt-3" />
+          </span>
+          <div v-else>
+            <v-skeleton-loader
+              v-for="index in 10"
+              :key="index"
+              type="heading"
+              width="100%"
+              style="background-color: transparent"
+            ></v-skeleton-loader>
           </div>
         </div>
       </v-col>
@@ -36,21 +57,15 @@ import { FerasatExperience } from "@/utils/ferasatExperiences";
 import { getExperienceFromSheet } from "@/utils/googleSpreadSheetAPI";
 import { IExperience } from "@/interfaces";
 
-
 gsap.registerPlugin(TextPlugin);
 
 const title1 = ref(null);
 const title2 = ref(null);
 const workExperienceAnimation = ref(null);
 const experienceDetail = ref<IExperience.ExperiencePayload[]>([]);
+const loadingExperience = ref(false);
 
 onMounted(async () => {
-  const experience = await getExperienceFromSheet();
-  if (experience && experience.length) {
-    experienceDetail.value = experience.reverse();
-  }
-  else
-    experienceDetail.value = FerasatExperience.reverse();
   gsap.to(title1.value, {
     duration: 0.6,
     text: "Professional Experience",
@@ -69,6 +84,19 @@ onMounted(async () => {
     display: "block",
     x: 1,
   });
+  try {
+    loadingExperience.value = true;
+    const experience = await getExperienceFromSheet();
+    if (experience && experience.length) {
+      experienceDetail.value = experience.reverse();
+    } else experienceDetail.value = FerasatExperience.reverse();
+    loadingExperience.value = false;
+  } catch (e) {
+    console.error(e);
+    loadingExperience.value = false;
+  }
+    loadingExperience.value = false;
+
 });
 </script>
 <style lang="scss" scoped>
