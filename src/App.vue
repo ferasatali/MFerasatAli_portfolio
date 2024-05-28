@@ -124,13 +124,37 @@
             </div>
           </template>
         </v-list-item>
+        <v-list-item
+          to="/blogs"
+          class="mx-6"
+          color="white"
+          variant="plain"
+          @click="setTab('/blogs')"
+        >
+          <template v-slot:default>
+            <div class="d-flex align-center">
+              <img
+                v-if="route.path == '/blogs'"
+                src="@/assets/icons/linear/active/settings.svg"
+                class="mx-2"
+              />
+              <img
+                v-else
+                src="@/assets/icons/linear/simple/settings.svg"
+                class="mx-2"
+              />
+              Blogs
+            </div>
+          </template>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar class="app-bar">
       <template v-slot:prepend>
-        <v-app-bar-nav-icon @click.stop="appBar = !appBar"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon @click.stop="appBar = !appBar" v-if="!vuetify.display.mdAndUp"></v-app-bar-nav-icon>
       </template>
       <v-spacer />
+      
       <HeaderComponent />
     </v-app-bar>
 
@@ -151,6 +175,7 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { useRouter } from "vue-router";
 const router = useRouter();
+import vuetify from "@/plugins/vuetify";
 
 onMounted(() => {
   if (sessionStorage.getItem("route")) {

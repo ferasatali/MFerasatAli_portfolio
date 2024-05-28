@@ -34,6 +34,16 @@ const routes = [
         name: "ContactMe",
         component: () => import("@/components/discover/ContactMe.vue"),
       },
+      {
+        path: "/blogs",
+        name: "blogs",
+        component: () => import("@/components/Blogs/BlogsPage.vue"),
+      },
+      {
+        path: "/blogs/:blog",
+        name: "blog-details",
+        component: () => import("@/components/Blogs/BlogsPageView.vue"),
+      },
     ],
   },
 ];
