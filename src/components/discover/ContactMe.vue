@@ -1,6 +1,6 @@
 <template>
   <section id="contact-me" class="pa-md-14 pa-5">
-    <v-row align="center" class="mt-md-14 mt-6">
+    <v-row align="center" class="mt-md-10 mt-6">
       <v-col cols="12" class="px-2 px-md-5">
         <div ref="contact" class="contact">
           <p class="main-heading">Contact Me</p>
