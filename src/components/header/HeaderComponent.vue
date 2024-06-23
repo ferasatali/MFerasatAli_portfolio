@@ -24,7 +24,11 @@
         >
           <div class="d-flex align-center" style="gap: 0.6rem">
             <v-icon> mdi-email </v-icon>
-            <p>ferasatali14@gmail.com</p>
+            <p>mferasatali@gmail.com</p>
+          </div>
+          <div class="d-flex align-center" style="gap: 0.6rem">
+            <v-icon> mdi-email </v-icon>
+            <p>ALT: ferasatali14@gmail.com</p>
           </div>
           <div class="d-flex align-center" style="gap: 0.6rem">
             <v-icon> mdi-phone </v-icon>
