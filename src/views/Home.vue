@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-center justify-center flex-column home">
     <!-- Tagline -->
-    <div class="home-tagline d-flex align-center justify-start py-1 px-4">
+    <div class="home-tagline d-flex align-center justify-start py-1 px-4 mt-4">
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
       <p class="">profileIntroduction('MFA');</p>
       <img width="30" src="@/assets/icons/stars.svg" alt="HCMS" />
