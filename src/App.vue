@@ -182,6 +182,7 @@ const setTab = (tab: string) => {
 }
 .app-bar {
   background-color: #06031b !important;
+  box-shadow: none;
 }
 .main-class {
   width: 100%;
