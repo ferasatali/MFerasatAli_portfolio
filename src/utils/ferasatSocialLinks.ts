@@ -3,7 +3,7 @@ import { ISocialLinks } from "@/interfaces/index";
 export const FerasatSocialLinks: ISocialLinks.SocialLinks[] = [
   {
     name: "GitHub",
-    link: "https://github.com/ferasatali",
+    link: "https://github.com/mferasatali",
     icon: "/github.png",
   },
   {
@@ -18,7 +18,7 @@ export const FerasatSocialLinks: ISocialLinks.SocialLinks[] = [
   },
   {
     name: "Twitter",
-    link: "https://twitter.com/AliFerasat",
+    link: "https://twitter.com/mferasat_ali",
     icon: "/twitter.png",
   },
   {
