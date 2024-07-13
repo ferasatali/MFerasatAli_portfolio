@@ -188,7 +188,7 @@ onMounted(async () => {
 @import "@/assets/scss/variables.scss";
 
 #serving-best {
-  padding: 2.5rem 1rem 4rem 1rem;
+  padding: 2.5rem 5rem 0rem 0rem;
   .base-card {
     padding: 1.75rem 1.5rem !important;
     background: #0a0b21 !important;
